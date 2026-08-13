@@ -17,4 +17,4 @@ jobs:
         run: npx --yes wrangler@latest deploy --assets ./static --name evo-clinic-template --compatibility-date 2026-08-13
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_ACCOUNT_ID: 3972de85ae8b3d2ee3e0d35ecf7ca358
