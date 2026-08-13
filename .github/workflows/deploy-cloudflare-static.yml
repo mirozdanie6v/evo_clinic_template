@@ -12,7 +12,10 @@ jobs:
         with:
           node-version: 22
       - name: Prepare static deployment
-        run: rm -f wrangler.jsonc
+        run: |
+          rm -f wrangler.jsonc
+          cp public/index.html static/en.html
+          cp site/index.html static/vi.html
       - name: Deploy static assets
         run: npx --yes wrangler@latest deploy --assets ./static --name evo-clinic-template --compatibility-date 2026-08-13
         env:
