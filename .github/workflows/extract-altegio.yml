@@ -1,0 +1,49 @@
+name: Extract EVO Altegio catalog
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/altegio-extractor.mjs'
+      - '.github/workflows/extract-altegio.yml'
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Extract public Altegio data
+        env:
+          ALTEGIO_BOOKING_URL: https://n1324284.alteg.io/company/1258225/personal/menu?o=
+          ALTEGIO_OUT_DIR: artifacts/altegio
+          ALTEGIO_MAX_CLICKS: '100'
+        run: node tools/altegio-extractor.mjs
+
+      - name: Show normalized result summary
+        if: always()
+        run: |
+          if [ -f artifacts/altegio/evo-altegio.json ]; then
+            node -e "const x=require('./artifacts/altegio/evo-altegio.json'); console.log({network:x.networkResponsesCaptured,categories:x.categories.length,services:x.services.length,staff:x.staff.length,failure:x.failure})"
+          fi
+
+      - name: Upload extraction artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evo-altegio-catalog
+          path: artifacts/altegio
+          if-no-files-found: warn
+          retention-days: 14
