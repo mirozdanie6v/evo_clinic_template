@@ -27,9 +27,9 @@ function replayHeaders(headers) {
 
 async function loadLocation(id) {
   const page = await context.newPage();
-  const serviceWait = page.waitForResponse(r => r.url().includes(`/book_services/${id}`) && r.status() === 200, { timeout: 45000 });
-  const staffWait = page.waitForResponse(r => r.url().includes(`/book_staff/${id}`) && !r.url().includes('service_ids') && r.status() === 200, { timeout: 45000 });
-  const companyWait = page.waitForResponse(r => r.url().includes(`/company/${id}`) && r.status() === 200, { timeout: 45000 });
+  const serviceWait = page.waitForResponse(r => r.url().includes(`/api/v1/book_services/${id}`) && r.status() === 200, { timeout: 45000 });
+  const staffWait = page.waitForResponse(r => r.url().includes(`/api/v1/book_staff/${id}`) && !r.url().includes('service_ids') && r.status() === 200, { timeout: 45000 });
+  const companyWait = page.waitForResponse(r => r.url().includes(`/api/v1/company/${id}?`) && r.status() === 200, { timeout: 45000 });
   await page.goto(`${host}/company/${id}/personal/menu?o=`, { waitUntil: 'domcontentloaded', timeout: 60000 });
   const [serviceResponse, staffResponse, companyResponse] = await Promise.all([serviceWait, staffWait, companyWait]);
   const [catalog, staff, company] = await Promise.all([serviceResponse.json(), staffResponse.json(), companyResponse.json()]);
