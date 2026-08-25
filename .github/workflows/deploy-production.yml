@@ -4,6 +4,10 @@ on:
     branches: [production]
   workflow_dispatch:
 
+concurrency:
+  group: evo-production-deploy
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -20,27 +24,36 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      - name: Verify production HTML CSS and JS
+      - name: Verify EVO production content CSS and JS
         shell: bash
         run: |
           set -euo pipefail
           BASE='https://evo-beauty-miniapp.mirozdanie6v.workers.dev'
           for attempt in 1 2 3 4 5 6; do
             curl -sS -L -D home.headers -o home.html "$BASE/?smoke=${GITHUB_SHA}-${attempt}"
-            CSS_PATH=$(grep -oE '/_next/static/[^" ]+\.css' home.html | head -n1 || true)
-            JS_PATH=$(grep -oE '/_next/static/[^" ]+\.js' home.html | head -n1 || true)
-            if [ -n "$CSS_PATH" ] && [ -n "$JS_PATH" ]; then break; fi
+            grep -oE '/_next/static/[^" ]+\.css' home.html | sort -u > css.paths || true
+            grep -oE '/_next/static/[^" ]+\.js' home.html | sort -u > js.paths || true
+            if [ -s css.paths ] && [ -s js.paths ]; then break; fi
             sleep 5
           done
           grep -q 'EVO Beauty Space' home.html || { echo 'Expected EVO app markup not found'; head -c 1500 home.html; exit 2; }
-          ! grep -q 'href="styles.css"' home.html || { echo 'Legacy static HTML is being served'; exit 3; }
-          test -n "$CSS_PATH" || { echo 'No Next.js CSS reference'; exit 4; }
-          test -n "$JS_PATH" || { echo 'No Next.js JS reference'; exit 5; }
-          curl -sS -L -D css.headers -o css.body "$BASE$CSS_PATH"
-          grep -qi '^content-type: text/css' css.headers || { echo 'Production CSS has invalid content-type'; cat css.headers; exit 6; }
-          test -s css.body || { echo 'Production CSS body is empty'; exit 7; }
-          grep -q ':root' css.body || { echo 'Expected global CSS not found'; exit 8; }
-          curl -sS -L -D js.headers -o js.body "$BASE$JS_PATH"
-          grep -Eqi '^content-type: (application|text)/(javascript|x-javascript)' js.headers || { echo 'Production JS has invalid content-type'; cat js.headers; exit 9; }
-          test -s js.body || { echo 'Production JS body is empty'; exit 10; }
-          echo "Production assets verified: $CSS_PATH $JS_PATH"
+          grep -q '2ae8cc03-27cf-4fc8-a187-507c0d31ea4b' home.html || { echo 'Official EVO logo reference missing'; exit 3; }
+          grep -q '@evo_vn' home.html || { echo 'Official EVO Telegram missing'; exit 4; }
+          grep -q 'company/1258225/personal/menu' home.html || { echo 'Official EVO Altegio booking link missing'; exit 5; }
+          ! grep -q 'href="styles.css"' home.html || { echo 'Legacy static HTML is being served'; exit 6; }
+          test -s css.paths || { echo 'No Next.js CSS references'; exit 7; }
+          test -s js.paths || { echo 'No Next.js JS references'; exit 8; }
+          : > css.all
+          while IFS= read -r path; do
+            curl -fsS -L -D css.headers -o css.part "$BASE$path"
+            grep -qi '^content-type: text/css' css.headers || { echo "Invalid CSS content-type: $path"; cat css.headers; exit 9; }
+            cat css.part >> css.all
+          done < css.paths
+          test -s css.all || { echo 'Production CSS body is empty'; exit 10; }
+          grep -q ':root' css.all || { echo 'Expected global CSS not found'; exit 11; }
+          grep -q 'catalogSearch' css.all || { echo 'Expected P1 catalog styles not found'; exit 12; }
+          JS_PATH=$(head -n1 js.paths)
+          curl -fsS -L -D js.headers -o js.body "$BASE$JS_PATH"
+          grep -Eqi '^content-type: (application|text)/(javascript|x-javascript)' js.headers || { echo 'Production JS has invalid content-type'; cat js.headers; exit 13; }
+          test -s js.body || { echo 'Production JS body is empty'; exit 14; }
+          echo "Production verified with $(wc -l < css.paths) CSS chunks and official EVO content"
