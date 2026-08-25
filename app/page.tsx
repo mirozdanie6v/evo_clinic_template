@@ -83,8 +83,9 @@ export default function App() {
 
   const chooseService = (id:string) => {
     const service = getService(id);
-    setBooking(prev=>({...prev,serviceId:id,specialistId:service?.specialistIds.length===1?service.specialistIds[0]:"",date:"",time:""}));
-    setBookingStep(service?.specialistIds.length===1 ? 2 : 1);
+    const preferred=booking.specialistId&&service?.specialistIds.includes(booking.specialistId)?booking.specialistId:(service?.specialistIds.length===1?service.specialistIds[0]:"");
+    setBooking(prev=>({...prev,serviceId:id,specialistId:preferred,date:"",time:""}));
+    setBookingStep(preferred ? 2 : 1);
   };
 
   const submitAppointment = () => {
@@ -118,7 +119,7 @@ export default function App() {
       const score = tokens.reduce((sum,token)=>sum+(haystack.includes(token)?1:0),0);
       return {service,score};
     }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,3).map(x=>x.service.id);
-    setAnswer(scored.length ? scored : ["consultation"]);
+    setAnswer(scored.length ? scored : [services.find(service=>service.categoryId==="altegio-13249482")?.id||services[0]?.id].filter(Boolean) as string[]);
   };
 
   const nav = (target:Screen) => { setScreen(target); setSuccess(false); window.scrollTo({top:0,behavior:"smooth"}); };
@@ -133,7 +134,7 @@ export default function App() {
     <section className="content">
       {screen==="home" && <>
         <section className="hero"><div className="heroShade"/><div className="heroText"><small>{t.home.eyebrow}</small><h1>{t.home.title}</h1><p>{t.home.lead}</p><div className="actions"><button className="primary light" onClick={()=>startBooking()}>{t.common.book}</button><button className="secondary light" onClick={()=>nav("services")}>{t.nav.services}</button></div></div></section>
-        <button className="status" onClick={()=>startBooking("consultation")}><i/><span><b>{t.home.open}</b><small>{t.home.consult}</small></span><em>→</em></button>
+        <button className="status" onClick={()=>startBooking(services.find(service=>service.categoryId==="altegio-13249482")?.id||"")}><i/><span><b>{t.home.open}</b><small>{t.home.consult}</small></span><em>→</em></button>
         <SectionTitle title={t.home.popular} action={t.home.all} onAction={()=>nav("services")}/>
         <div className="categoryGrid">{categories.slice(1,5).map(category=><button className="categoryCard" key={category.id} onClick={()=>{const first=services.find(x=>x.categoryId===category.id); if(first)openService(first.id)}}><img src={category.image} alt=""/><span><b>{category.name[lang]}</b><small>{category.note[lang]}</small></span></button>)}</div>
         <SectionTitle title={t.home.specialists} action={t.home.all} onAction={()=>nav("specialists")}/>
@@ -141,9 +142,9 @@ export default function App() {
         <section className="locationCard"><small>EVO · NHA TRANG</small><h2>{t.home.contacts}</h2><p>{location.address}</p><div className="contactLinks"><a href={`tel:${location.phone.replace(/\s/g,"")}`}>{location.phone}</a><a href={`mailto:${location.email}`}>{location.email}</a></div><div className="actions"><a className="primary" href={location.mapUrl} target="_blank" rel="noreferrer">{t.home.route}</a><a className="secondary" href={location.bookingUrl} target="_blank" rel="noreferrer">Altegio</a></div></section>
       </>}
 
-      {screen==="services" && <section className="page"><PageHead eyebrow="EVO CARE" title={t.services.title} lead={t.services.lead}/><div className="serviceGroups">{categories.map(category=><section className="serviceGroup" key={category.id}><div className="groupHead"><div><h2>{category.name[lang]}</h2><p>{category.note[lang]}</p></div></div><div className="serviceList">{services.filter(s=>s.categoryId===category.id).map(service=><button className="serviceRow" key={service.id} onClick={()=>openService(service.id)}><img src={service.image} alt=""/><span><b>{service.name[lang]}</b><small>{service.description[lang]}</small><em>{service.price[lang]} · {service.duration} min</em></span><strong>→</strong></button>)}</div></section>)}</div><button className="linkRow" onClick={()=>nav("specialists")}>{t.specialists.title}<span>→</span></button></section>}
+      {screen==="services" && <section className="page"><PageHead eyebrow="EVO CARE" title={t.services.title} lead={t.services.lead}/><div className="serviceGroups">{categories.map(category=><section className="serviceGroup" key={category.id}><div className="groupHead"><div><h2>{category.name[lang]}</h2><p>{category.note[lang]}</p></div></div><div className="serviceList">{services.filter(s=>s.categoryId===category.id).map(service=><button className="serviceRow" key={service.id} onClick={()=>openService(service.id)}><img src={service.image} alt=""/><span><b>{service.name[lang]}</b><small>{service.description[lang]}</small><em>{service.price[lang]}{service.duration?` · ${service.duration} min`:""}</em></span><strong>→</strong></button>)}</div></section>)}</div><button className="linkRow" onClick={()=>nav("specialists")}>{t.specialists.title}<span>→</span></button></section>}
 
-      {screen==="service" && selectedService && <section className="page"><button className="back" onClick={()=>nav("services")}>← {t.common.back}</button><div className="detailHero"><img src={selectedService.image} alt=""/></div><small>{getCategory(selectedService.categoryId)?.name[lang]}</small><h1>{selectedService.name[lang]}</h1><p>{selectedService.description[lang]}</p><div className="facts"><div><small>{t.services.price}</small><b>{selectedService.price[lang]}</b></div><div><small>{t.services.duration}</small><b>{selectedService.duration} min</b></div></div><h3>{t.services.specialists}</h3><div className="specialistStrip">{specialists.filter(s=>selectedService.specialistIds.includes(s.id)).map(s=><button className="specialistMini" key={s.id} onClick={()=>openSpecialist(s.id)}><img src={s.image} alt=""/><span><b>{s.name[lang]}</b><small>{s.role[lang]}</small></span><em>→</em></button>)}</div><button className="primary full" onClick={()=>startBooking(selectedService.id)}>{t.services.book}</button></section>}
+      {screen==="service" && selectedService && <section className="page"><button className="back" onClick={()=>nav("services")}>← {t.common.back}</button><div className="detailHero"><img src={selectedService.image} alt=""/></div><small>{getCategory(selectedService.categoryId)?.name[lang]}</small><h1>{selectedService.name[lang]}</h1><p>{selectedService.description[lang]}</p><div className="facts"><div><small>{t.services.price}</small><b>{selectedService.price[lang]}</b></div><div><small>{t.services.duration}</small><b>{selectedService.duration?`${selectedService.duration} min`:"—"}</b></div></div><h3>{t.services.specialists}</h3><div className="specialistStrip">{specialists.filter(s=>selectedService.specialistIds.includes(s.id)).map(s=><button className="specialistMini" key={s.id} onClick={()=>openSpecialist(s.id)}><img src={s.image} alt=""/><span><b>{s.name[lang]}</b><small>{s.role[lang]}</small></span><em>→</em></button>)}</div><button className="primary full" onClick={()=>startBooking(selectedService.id)}>{t.services.book}</button></section>}
 
       {screen==="specialists" && <section className="page"><PageHead eyebrow="EVO TEAM" title={t.specialists.title} lead={t.specialists.lead}/><div className="specialistGrid">{specialists.map(s=><button className="specialistCard" key={s.id} onClick={()=>openSpecialist(s.id)}><img src={s.image} alt=""/><span>{s.demo&&<em>{t.specialists.demo}</em>}<b>{s.name[lang]}</b><small>{s.role[lang]}</small></span></button>)}</div></section>}
 
