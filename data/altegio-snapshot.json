@@ -1,8 +1,9 @@
 {
   "meta": {
     "source": "Altegio public booking catalog",
+    "scope": "EVO NORTH full public catalog",
     "extractedAt": "2026-08-25T08:16:11.286Z",
-    "normalizedAt": "2026-08-25T08:27:11.148Z",
+    "normalizedAt": "2026-08-25T12:07:03.625Z",
     "sourceLocationId": 251848,
     "priceUnit": "thousand-vnd"
   },
@@ -19,6 +20,90 @@
   },
   "categories": [
     {
+      "id": 13293803,
+      "title": "Ресницы"
+    },
+    {
+      "id": 10410331,
+      "title": "Наращивание ресниц"
+    },
+    {
+      "id": 13249483,
+      "title": "Коррекция перманентного макияжа"
+    },
+    {
+      "id": 13310361,
+      "title": "Брови"
+    },
+    {
+      "id": 13275873,
+      "title": "Перманентный макияж"
+    },
+    {
+      "id": 13249479,
+      "title": "Женская эпиляция"
+    },
+    {
+      "id": 13275875,
+      "title": "Эстетика тела"
+    },
+    {
+      "id": 13249485,
+      "title": "Мужская эпиляция"
+    },
+    {
+      "id": 12262315,
+      "title": "Педикюр"
+    },
+    {
+      "id": 12262298,
+      "title": "Маникюр"
+    },
+    {
+      "id": 12262320,
+      "title": "Стрижки / Укладки"
+    },
+    {
+      "id": 12262322,
+      "title": "Уходы с укладкой"
+    },
+    {
+      "id": 12262321,
+      "title": "Уходы дополнительно к другой услуге"
+    },
+    {
+      "id": 12263464,
+      "title": "Окрашивание / Тонирование"
+    },
+    {
+      "id": 12262316,
+      "title": "Сложное окрашивание"
+    },
+    {
+      "id": 12262318,
+      "title": "Сложное окрашивание в яркий цвет"
+    },
+    {
+      "id": 12262317,
+      "title": "Сложное окрашивание (AirTouch, Shatush, Total Blond)"
+    },
+    {
+      "id": 12263463,
+      "title": "Коррекция Total Blond"
+    },
+    {
+      "id": 12262319,
+      "title": "Снятие цвета"
+    },
+    {
+      "id": 12263465,
+      "title": "Окрашивание Total Blond для мужчин"
+    },
+    {
+      "id": 10411306,
+      "title": "Барбер"
+    },
+    {
       "id": 13249482,
       "title": "Консультация косметолога"
     },
@@ -29,6 +114,10 @@
     {
       "id": 13249484,
       "title": "Мезотерапия"
+    },
+    {
+      "id": 10410407,
+      "title": "___Мезотерапия"
     },
     {
       "id": 13275874,
@@ -63,6 +152,22 @@
       "title": "Эстетические процедуры (косметология)"
     },
     {
+      "id": 10764912,
+      "title": "Обучение"
+    },
+    {
+      "id": 13073185,
+      "title": "Подология"
+    },
+    {
+      "id": 11568788,
+      "title": "Массаж"
+    },
+    {
+      "id": 12892505,
+      "title": "Удаление тату лазером"
+    },
+    {
       "id": 13323823,
       "title": "Микроигольчатый RF-лифтинг"
     },
@@ -76,6 +181,1983 @@
     }
   ],
   "services": [
+    {
+      "id": 13293812,
+      "title": "Окрашивание ресниц",
+      "categoryId": 13293803,
+      "priceMin": 200,
+      "priceMax": 200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760,
+        2122496
+      ]
+    },
+    {
+      "id": 13293810,
+      "title": "Ламинирование ресниц",
+      "categoryId": 13293803,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760,
+        2122496
+      ]
+    },
+    {
+      "id": 13293811,
+      "title": "Ламинирование ресниц (сидя)",
+      "categoryId": 13293803,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 10410332,
+      "title": "Классика",
+      "categoryId": 10410331,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760
+      ]
+    },
+    {
+      "id": 10410335,
+      "title": "1,5 D",
+      "categoryId": 10410331,
+      "priceMin": 1200,
+      "priceMax": 1200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760
+      ]
+    },
+    {
+      "id": 10410336,
+      "title": "2 D",
+      "categoryId": 10410331,
+      "priceMin": 1400,
+      "priceMax": 1400,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760
+      ]
+    },
+    {
+      "id": 10410337,
+      "title": "2,5 D",
+      "categoryId": 10410331,
+      "priceMin": 1400,
+      "priceMax": 1400,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760
+      ]
+    },
+    {
+      "id": 10410340,
+      "title": "3 D",
+      "categoryId": 10410331,
+      "priceMin": 1600,
+      "priceMax": 1600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760
+      ]
+    },
+    {
+      "id": 10410344,
+      "title": "Мегаобъем",
+      "categoryId": 10410331,
+      "priceMin": 1800,
+      "priceMax": 1800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760
+      ]
+    },
+    {
+      "id": 13275846,
+      "title": "Брови",
+      "categoryId": 13249483,
+      "priceMin": 2500,
+      "priceMax": 2500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275847,
+      "title": "Губы",
+      "categoryId": 13249483,
+      "priceMin": 2800,
+      "priceMax": 2800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275851,
+      "title": "Стрелка с растушевкой",
+      "categoryId": 13249483,
+      "priceMin": 2500,
+      "priceMax": 2500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275849,
+      "title": "Классическая стрелка",
+      "categoryId": 13249483,
+      "priceMin": 2500,
+      "priceMax": 2500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275848,
+      "title": "Заполнение межресничного пространства",
+      "categoryId": 13249483,
+      "priceMin": 2000,
+      "priceMax": 2000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275850,
+      "title": "Перекрытие / Исправление не нашей работы",
+      "categoryId": 13249483,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275852,
+      "title": "Удаление перманента ремувером",
+      "categoryId": 13249483,
+      "priceMin": 1200,
+      "priceMax": 1200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 12422192,
+      "title": "Удаление перманента лазером",
+      "categoryId": 13249483,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13310370,
+      "title": "Оформление бровей без окрашивания",
+      "categoryId": 13310361,
+      "priceMin": 400,
+      "priceMax": 400,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760,
+        2122496
+      ]
+    },
+    {
+      "id": 13310369,
+      "title": "Окрашивание без коррекции",
+      "categoryId": 13310361,
+      "priceMin": 300,
+      "priceMax": 300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760,
+        2122496
+      ]
+    },
+    {
+      "id": 13310371,
+      "title": "Оформление и окрашивание бровей",
+      "categoryId": 13310361,
+      "priceMin": 600,
+      "priceMax": 600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760,
+        2122496
+      ]
+    },
+    {
+      "id": 13310366,
+      "title": "Ламинирование бровей",
+      "categoryId": 13310361,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760,
+        2122496
+      ]
+    },
+    {
+      "id": 13310365,
+      "title": "Ламинирование + оформление бровей",
+      "categoryId": 13310361,
+      "priceMin": 800,
+      "priceMax": 800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760,
+        2122496
+      ]
+    },
+    {
+      "id": 13310364,
+      "title": "Ламинирование + оформление + окрашивание бровей",
+      "categoryId": 13310361,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760,
+        2122496
+      ]
+    },
+    {
+      "id": 13310367,
+      "title": "Мужское оформление бровей без окрашивания",
+      "categoryId": 13310361,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760,
+        2122496
+      ]
+    },
+    {
+      "id": 13310368,
+      "title": "Мужское оформление бровей с окрашиванием",
+      "categoryId": 13310361,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760,
+        2122496
+      ]
+    },
+    {
+      "id": 13310363,
+      "title": "Депеляция зоны лица (1 зона)",
+      "categoryId": 13310361,
+      "priceMin": 150,
+      "priceMax": 150,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2942760,
+        2122496
+      ]
+    },
+    {
+      "id": 13275911,
+      "title": "Брови",
+      "categoryId": 13275873,
+      "priceMin": 4000,
+      "priceMax": 4000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275912,
+      "title": "Губы",
+      "categoryId": 13275873,
+      "priceMin": 4500,
+      "priceMax": 4500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275910,
+      "title": "Стрелка с растушевкой",
+      "categoryId": 13275873,
+      "priceMin": 4500,
+      "priceMax": 4500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275909,
+      "title": "Классическая стрелка",
+      "categoryId": 13275873,
+      "priceMin": 4500,
+      "priceMax": 4500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275908,
+      "title": "Заполнение межресничного пространства",
+      "categoryId": 13275873,
+      "priceMin": 3500,
+      "priceMax": 3500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275907,
+      "title": "Перекрытие / Исправление не нашей работы",
+      "categoryId": 13275873,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275808,
+      "title": "Лазерная эпиляция: комбо 1 (подмышечные впадины, глубокое бикини, голени)",
+      "categoryId": 13249479,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275809,
+      "title": "Лазерная эпиляция:м комбо 2 (подмышечные впадины, глубокое бикини, ноги полностью)",
+      "categoryId": 13249479,
+      "priceMin": 1200,
+      "priceMax": 1200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275811,
+      "title": "Лазерная эпиляция: лоб",
+      "categoryId": 13249479,
+      "priceMin": 300,
+      "priceMax": 300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275801,
+      "title": "Лазерная эпиляция: верхняя губа",
+      "categoryId": 13249479,
+      "priceMin": 200,
+      "priceMax": 200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275810,
+      "title": "Лазерная эпиляция: лицо полностью",
+      "categoryId": 13249479,
+      "priceMin": 400,
+      "priceMax": 400,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275806,
+      "title": "Лазерная эпиляция: грудь/живот",
+      "categoryId": 13249479,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275813,
+      "title": "Лазерная эпиляция: плечо",
+      "categoryId": 13249479,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275815,
+      "title": "Лазерная эпиляция: предплечье",
+      "categoryId": 13249479,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275816,
+      "title": "Лазерная эпиляция: руки полностью",
+      "categoryId": 13249479,
+      "priceMin": 600,
+      "priceMax": 600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275814,
+      "title": "Лазерная эпиляция: подмышечные впадины",
+      "categoryId": 13249479,
+      "priceMin": 300,
+      "priceMax": 300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275817,
+      "title": "Лазерная эпиляция: спина",
+      "categoryId": 13249479,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275807,
+      "title": "Лазерная эпиляция: классическое бикини",
+      "categoryId": 13249479,
+      "priceMin": 350,
+      "priceMax": 350,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275803,
+      "title": "Лазерная эпиляция: глубокое бикини",
+      "categoryId": 13249479,
+      "priceMin": 550,
+      "priceMax": 550,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275804,
+      "title": "Лазерная эпиляция: голени",
+      "categoryId": 13249479,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275800,
+      "title": "Лазерная эпиляция: бедра",
+      "categoryId": 13249479,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275812,
+      "title": "Лазерная эпиляция: ноги полностью",
+      "categoryId": 13249479,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275802,
+      "title": "Лазерная эпиляция: все тело",
+      "categoryId": 13249479,
+      "priceMin": 2500,
+      "priceMax": 2500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275805,
+      "title": "Лазерная эпиляция: грудь",
+      "categoryId": 13249479,
+      "priceMin": 200,
+      "priceMax": 200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662,
+        2122496
+      ]
+    },
+    {
+      "id": 13497935,
+      "title": "Линия живота",
+      "categoryId": 13249479,
+      "priceMin": 200,
+      "priceMax": 200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 13275919,
+      "title": "Художественная татуировка / Мини-тату / Надписи",
+      "categoryId": 13275875,
+      "priceMin": 1000,
+      "priceMax": 0,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275918,
+      "title": "Дермопигментация (шрамы, рубцы, пигментные пятна)",
+      "categoryId": 13275875,
+      "priceMin": 1000,
+      "priceMax": 0,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275917,
+      "title": "Восстановление ареолы",
+      "categoryId": 13275875,
+      "priceMin": 3000,
+      "priceMax": 0,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13275823,
+      "title": "Комбо 1: (подмышечные впадины + шея + грудь))",
+      "categoryId": 13249485,
+      "priceMin": 1200,
+      "priceMax": 1200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275824,
+      "title": "Комбо 2: (бикини+подмышечные впадины)",
+      "categoryId": 13249485,
+      "priceMin": 900,
+      "priceMax": 900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275832,
+      "title": "Шея",
+      "categoryId": 13249485,
+      "priceMin": 400,
+      "priceMax": 400,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275825,
+      "title": "Лицо",
+      "categoryId": 13249485,
+      "priceMin": 440,
+      "priceMax": 440,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275821,
+      "title": "Голова",
+      "categoryId": 13249485,
+      "priceMin": 550,
+      "priceMax": 550,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275822,
+      "title": "Грудь/Живот",
+      "categoryId": 13249485,
+      "priceMin": 550,
+      "priceMax": 550,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275827,
+      "title": "Плечо",
+      "categoryId": 13249485,
+      "priceMin": 550,
+      "priceMax": 550,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275829,
+      "title": "Предплечье",
+      "categoryId": 13249485,
+      "priceMin": 550,
+      "priceMax": 550,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275830,
+      "title": "Руки полностью",
+      "categoryId": 13249485,
+      "priceMin": 660,
+      "priceMax": 660,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275828,
+      "title": "Подмышечные впадины",
+      "categoryId": 13249485,
+      "priceMin": 330,
+      "priceMax": 330,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275831,
+      "title": "Спина",
+      "categoryId": 13249485,
+      "priceMin": 770,
+      "priceMax": 770,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275820,
+      "title": "Голени",
+      "categoryId": 13249485,
+      "priceMin": 550,
+      "priceMax": 550,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275818,
+      "title": "Бедра",
+      "categoryId": 13249485,
+      "priceMin": 550,
+      "priceMax": 550,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275826,
+      "title": "Ноги полностью",
+      "categoryId": 13249485,
+      "priceMin": 770,
+      "priceMax": 770,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275819,
+      "title": "Бикини",
+      "categoryId": 13249485,
+      "priceMin": 600,
+      "priceMax": 600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13429389,
+      "title": "Все тело",
+      "categoryId": 13249485,
+      "priceMin": 2750,
+      "priceMax": 2750,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2861718,
+        2849662
+      ]
+    },
+    {
+      "id": 12262333,
+      "title": "Педикюр с покрытием с обработкой стоп",
+      "categoryId": 12262315,
+      "priceMin": 1100,
+      "priceMax": 1100,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3005950,
+        2994884,
+        2790435
+      ]
+    },
+    {
+      "id": 12262331,
+      "title": "Педикюр с покрытием без обработки стоп",
+      "categoryId": 12262315,
+      "priceMin": 900,
+      "priceMax": 900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3005950,
+        2994884,
+        2790435
+      ]
+    },
+    {
+      "id": 12262326,
+      "title": "Гигиенический педикюр с обработкой стоп",
+      "categoryId": 12262315,
+      "priceMin": 900,
+      "priceMax": 900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3005950,
+        2994884,
+        2790435
+      ]
+    },
+    {
+      "id": 12262323,
+      "title": "Гигиенический педикюр без обработки стоп",
+      "categoryId": 12262315,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3005950,
+        2994884,
+        2790435
+      ]
+    },
+    {
+      "id": 12262329,
+      "title": "Педикюр: обработка стоп",
+      "categoryId": 12262315,
+      "priceMin": 400,
+      "priceMax": 400,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3005950,
+        2994884
+      ]
+    },
+    {
+      "id": 12262328,
+      "title": "Мужской педикюр с обработкой стоп",
+      "categoryId": 12262315,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2790435
+      ]
+    },
+    {
+      "id": 12262327,
+      "title": "Мужской педикюр без обработки стоп",
+      "categoryId": 12262315,
+      "priceMin": 800,
+      "priceMax": 800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2790435
+      ]
+    },
+    {
+      "id": 12262307,
+      "title": "Маникюр с покрытием",
+      "categoryId": 12262298,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3005950,
+        2994884
+      ]
+    },
+    {
+      "id": 12957442,
+      "title": "Снятие+маникюр без дальнейшего покрытия",
+      "categoryId": 12262298,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3005950,
+        2994884
+      ]
+    },
+    {
+      "id": 12262304,
+      "title": "Гигиенический маникюр без покрытия",
+      "categoryId": 12262298,
+      "priceMin": 600,
+      "priceMax": 600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3005950,
+        2994884
+      ]
+    },
+    {
+      "id": 12805314,
+      "title": "Наращивание ногтей (короткая/средняя длина)",
+      "categoryId": 12262298,
+      "priceMin": 1700,
+      "priceMax": 1700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 12805315,
+      "title": "Наращивание ногтей (длинные)",
+      "categoryId": 12262298,
+      "priceMin": 2000,
+      "priceMax": 2000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13089616,
+      "title": "Коррекция наращеных ногтей (до 4 мм)",
+      "categoryId": 12262298,
+      "priceMin": 1300,
+      "priceMax": 1300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3005950
+      ]
+    },
+    {
+      "id": 13089617,
+      "title": "Коррекция наращеных ногтей (от 4 мм)",
+      "categoryId": 12262298,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3005950
+      ]
+    },
+    {
+      "id": 12262308,
+      "title": "Мужской маникюр",
+      "categoryId": 12262298,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 12262305,
+      "title": "Детский маникюр",
+      "categoryId": 12262298,
+      "priceMin": 150,
+      "priceMax": 150,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 12262314,
+      "title": "Японский маникюр",
+      "categoryId": 12262298,
+      "priceMin": 800,
+      "priceMax": 800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3005950
+      ]
+    },
+    {
+      "id": 12262352,
+      "title": "Женская стрижка с укладкой (короткие)",
+      "categoryId": 12262320,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404
+      ]
+    },
+    {
+      "id": 13560987,
+      "title": "Женская стрижка с укладкой (средние)",
+      "categoryId": 12262320,
+      "priceMin": 600,
+      "priceMax": 600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2121149
+      ]
+    },
+    {
+      "id": 13560988,
+      "title": "Женская стрижка с укладкой (длинные)",
+      "categoryId": 12262320,
+      "priceMin": 800,
+      "priceMax": 800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2121149
+      ]
+    },
+    {
+      "id": 13560992,
+      "title": "Креативная стрижка (короткие)",
+      "categoryId": 12262320,
+      "priceMin": 600,
+      "priceMax": 600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404
+      ]
+    },
+    {
+      "id": 13560993,
+      "title": "Креативная стрижка (средние)",
+      "categoryId": 12262320,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404
+      ]
+    },
+    {
+      "id": 13560994,
+      "title": "Креативная стрижка (длинные)",
+      "categoryId": 12262320,
+      "priceMin": 900,
+      "priceMax": 900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404
+      ]
+    },
+    {
+      "id": 12262357,
+      "title": "Стрижка по \"кудрявому методу\" (короткие)",
+      "categoryId": 12262320,
+      "priceMin": 800,
+      "priceMax": 800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313
+      ]
+    },
+    {
+      "id": 13560989,
+      "title": "Стрижка по \"кудрявому методу\" (средние)",
+      "categoryId": 12262320,
+      "priceMin": 900,
+      "priceMax": 900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        2121149
+      ]
+    },
+    {
+      "id": 13560990,
+      "title": "Стрижка по \"кудрявому методу\" (длинные)",
+      "categoryId": 12262320,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        2121149
+      ]
+    },
+    {
+      "id": 12262351,
+      "title": "Детская стрижка (девочка до 10 лет)",
+      "categoryId": 12262320,
+      "priceMin": 400,
+      "priceMax": 400,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404
+      ]
+    },
+    {
+      "id": 12262353,
+      "title": "Повседневная укладка",
+      "categoryId": 12262320,
+      "priceMin": 300,
+      "priceMax": 300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404
+      ]
+    },
+    {
+      "id": 12262350,
+      "title": "Горячая укладка",
+      "categoryId": 12262320,
+      "priceMin": 600,
+      "priceMax": 600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404
+      ]
+    },
+    {
+      "id": 12262355,
+      "title": "Прическа вечерняя",
+      "categoryId": 12262320,
+      "priceMin": 900,
+      "priceMax": 0,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3007404
+      ]
+    },
+    {
+      "id": 12262371,
+      "title": "Lebel \"Счастье для волос\" до 15 см",
+      "categoryId": 12262322,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 13354690,
+      "title": "Lebel \"Счастье для волос\" до 40 см",
+      "categoryId": 12262322,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 13354695,
+      "title": "Lebel \"Счастье для волос\" от 40 см",
+      "categoryId": 12262322,
+      "priceMin": 2300,
+      "priceMax": 2300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262368,
+      "title": "Davines \"Липидное питание\" Oi + укладка",
+      "categoryId": 12262322,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12768489,
+      "title": "OLAPLEX восстановление волос (длина от 40)",
+      "categoryId": 12262322,
+      "priceMin": 1500,
+      "priceMax": 0,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12768471,
+      "title": "OLAPLEX восстановление волос (длина до 40)",
+      "categoryId": 12262322,
+      "priceMin": 1100,
+      "priceMax": 1100,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12768469,
+      "title": "OLAPLEX восстановление волос (длина до 15)",
+      "categoryId": 12262322,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262375,
+      "title": "Восстановление K-Pak",
+      "categoryId": 12262322,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262374,
+      "title": "Tokio (средние)",
+      "categoryId": 12262322,
+      "priceMin": 2300,
+      "priceMax": 2300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262373,
+      "title": "Tokio (короткие)",
+      "categoryId": 12262322,
+      "priceMin": 1600,
+      "priceMax": 1600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262372,
+      "title": "Tokio (длинные)",
+      "categoryId": 12262322,
+      "priceMin": 3000,
+      "priceMax": 3000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 13510261,
+      "title": "Hair Sekta",
+      "categoryId": 12262322,
+      "priceMin": 2300,
+      "priceMax": 2300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562
+      ]
+    },
+    {
+      "id": 12262361,
+      "title": "Davines \"Липидное питание\" Oi (доп)",
+      "categoryId": 12262321,
+      "priceMin": 300,
+      "priceMax": 300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262366,
+      "title": "Восстановление K-Pak доп.",
+      "categoryId": 12262321,
+      "priceMin": 1200,
+      "priceMax": 1200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12263477,
+      "title": "Корни до 2 см",
+      "categoryId": 12263464,
+      "priceMin": 1200,
+      "priceMax": 1200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12263475,
+      "title": "Тонирование (до 15 см) однотонное/яркое",
+      "categoryId": 12263464,
+      "priceMin": 1300,
+      "priceMax": 1300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12263476,
+      "title": "Тонирование (до 40 см) однотонное/яркое",
+      "categoryId": 12263464,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12263478,
+      "title": "Тонирование (от 40 см) однотонное/яркое",
+      "categoryId": 12263464,
+      "priceMin": 1800,
+      "priceMax": 1800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12768804,
+      "title": "Стойкое окрашивание (до 15 см)",
+      "categoryId": 12263464,
+      "priceMin": 2300,
+      "priceMax": 2300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12768806,
+      "title": "Стойкое окрашивание (до 40 см)",
+      "categoryId": 12263464,
+      "priceMin": 2500,
+      "priceMax": 2500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12768807,
+      "title": "Стойкое окрашивание (от 40 см)",
+      "categoryId": 12263464,
+      "priceMin": 2800,
+      "priceMax": 2800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262334,
+      "title": "Сложное окрашивание (до 15 см)",
+      "categoryId": 12262316,
+      "priceMin": 2500,
+      "priceMax": 2500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262335,
+      "title": "Сложное окрашивание (до 40 см)",
+      "categoryId": 12262316,
+      "priceMin": 3000,
+      "priceMax": 3000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262336,
+      "title": "Сложное окрашивание (от 40 см)",
+      "categoryId": 12262316,
+      "priceMin": 3700,
+      "priceMax": 3700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12841039,
+      "title": "Babylights до 18 прядей (до 15 см)",
+      "categoryId": 12262316,
+      "priceMin": 1900,
+      "priceMax": 1900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12841040,
+      "title": "Babylights до 18 прядей (до 40 см)",
+      "categoryId": 12262316,
+      "priceMin": 2200,
+      "priceMax": 2200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12841045,
+      "title": "Babylights до 18 прядей (от 40 см)",
+      "categoryId": 12262316,
+      "priceMin": 2500,
+      "priceMax": 2500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262342,
+      "title": "Сложное яркое окрашивание (до 15 см) градиент/голография/сплит",
+      "categoryId": 12262318,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262343,
+      "title": "Сложное яркое окрашивание (до 40 см) градиент/голография/сплит",
+      "categoryId": 12262318,
+      "priceMin": 1900,
+      "priceMax": 1900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262344,
+      "title": "Сложное яркое окрашивание (от 40 см) градиент/голография/сплит",
+      "categoryId": 12262318,
+      "priceMin": 2300,
+      "priceMax": 2300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262339,
+      "title": "AirTouch / Shatush (до 15 см)",
+      "categoryId": 12262317,
+      "priceMin": 4000,
+      "priceMax": 4000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262340,
+      "title": "AirTouch / Shatush (до 40 см)",
+      "categoryId": 12262317,
+      "priceMin": 5000,
+      "priceMax": 5000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262341,
+      "title": "AirTouch / Shatush (от 40 см)",
+      "categoryId": 12262317,
+      "priceMin": 6000,
+      "priceMax": 6000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12263470,
+      "title": "Осветление корней без тонирования",
+      "categoryId": 12263463,
+      "priceMin": 1300,
+      "priceMax": 1300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12263467,
+      "title": "Коррекция Total Blond (до 15 см)",
+      "categoryId": 12263463,
+      "priceMin": 1900,
+      "priceMax": 1900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12263468,
+      "title": "Коррекция Total Blond (до 40 см)",
+      "categoryId": 12263463,
+      "priceMin": 2500,
+      "priceMax": 2500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12263469,
+      "title": "Коррекция Total Blond (от 40 см)",
+      "categoryId": 12263463,
+      "priceMin": 3000,
+      "priceMax": 3000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262347,
+      "title": "Длина до 15 см (1 нанесение)",
+      "categoryId": 12262319,
+      "priceMin": 600,
+      "priceMax": 600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262348,
+      "title": "Длина до 40 см (1 нанесение)",
+      "categoryId": 12262319,
+      "priceMin": 800,
+      "priceMax": 800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12262349,
+      "title": "Длина от 40 см (1 нанесение)",
+      "categoryId": 12262319,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3024562,
+        3007404,
+        2747203,
+        2121149
+      ]
+    },
+    {
+      "id": 12263482,
+      "title": "Мужской Total Blond (на короткую стрижку)",
+      "categoryId": 12263465,
+      "priceMin": 3000,
+      "priceMax": 3000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 12263483,
+      "title": "Мужской Total Blond (на удлиненную (классическую) стрижку)",
+      "categoryId": 12263465,
+      "priceMin": 3500,
+      "priceMax": 3500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 12263480,
+      "title": "Мужской Total Blond (до 15 см)",
+      "categoryId": 12263465,
+      "priceMin": 4000,
+      "priceMax": 4000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 12263481,
+      "title": "Мужской Total Blond (до 40 см)",
+      "categoryId": 12263465,
+      "priceMin": 5000,
+      "priceMax": 5000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 12263484,
+      "title": "Мужской Total Blond (от 40 см)",
+      "categoryId": 12263465,
+      "priceMin": 6000,
+      "priceMax": 6000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 10411307,
+      "title": "Мужская стрижка",
+      "categoryId": 10411306,
+      "priceMin": 400,
+      "priceMax": 400,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3007404
+      ]
+    },
+    {
+      "id": 10411310,
+      "title": "Стрижка на ножницах (удлинённая)",
+      "categoryId": 10411306,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3007404
+      ]
+    },
+    {
+      "id": 10411308,
+      "title": "Стрижка под машинку (1-2 насадки)",
+      "categoryId": 10411306,
+      "priceMin": 200,
+      "priceMax": 200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313
+      ]
+    },
+    {
+      "id": 10411314,
+      "title": "Стрижка бороды (до 6 мм)",
+      "categoryId": 10411306,
+      "priceMin": 200,
+      "priceMax": 200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313
+      ]
+    },
+    {
+      "id": 10411311,
+      "title": "Моделирование бороды (с опасным лезвием)",
+      "categoryId": 10411306,
+      "priceMin": 350,
+      "priceMax": 350,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313
+      ]
+    },
+    {
+      "id": 10411315,
+      "title": "Детская стрижка (мальчик до 10 лет)",
+      "categoryId": 10411306,
+      "priceMin": 250,
+      "priceMax": 250,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        3040313,
+        3007404
+      ]
+    },
+    {
+      "id": 10411316,
+      "title": "Hair Tatoo",
+      "categoryId": 10411306,
+      "priceMin": 100,
+      "priceMax": 100,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 10506425,
+      "title": "Депеляция воском одной зоны",
+      "categoryId": 10411306,
+      "priceMin": 100,
+      "priceMax": 100,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
     {
       "id": 13275854,
       "title": "Консультация + назначение лечения",
@@ -349,6 +2431,26 @@
       "specialistIds": [
         2830441
       ]
+    },
+    {
+      "id": 10410410,
+      "title": "Eldermafill",
+      "categoryId": 10410407,
+      "priceMin": 2000,
+      "priceMax": 2000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 10436035,
+      "title": "Philosophy",
+      "categoryId": 10410407,
+      "priceMin": 2000,
+      "priceMax": 2000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
     },
     {
       "id": 13275916,
@@ -797,6 +2899,322 @@
       ]
     },
     {
+      "id": 10764913,
+      "title": "Обучение перманентному макияжу",
+      "categoryId": 10764912,
+      "priceMin": 0,
+      "priceMax": 0,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 13073205,
+      "title": "Подологическая консультация",
+      "categoryId": 13073185,
+      "priceMin": 400,
+      "priceMax": 400,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2790435
+      ]
+    },
+    {
+      "id": 13073206,
+      "title": "Подологическая обработка 1 степени сложности",
+      "categoryId": 13073185,
+      "priceMin": 1200,
+      "priceMax": 1200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2790435
+      ]
+    },
+    {
+      "id": 13073207,
+      "title": "Подологическая обработка 2 степени сложности",
+      "categoryId": 13073185,
+      "priceMin": 1400,
+      "priceMax": 1400,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2790435
+      ]
+    },
+    {
+      "id": 13073208,
+      "title": "Подологическая обработка 3 степени сложности (стопы и ногти))",
+      "categoryId": 13073185,
+      "priceMin": 1600,
+      "priceMax": 1600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2790435
+      ]
+    },
+    {
+      "id": 13089327,
+      "title": "Подологическая обработка диабетической стопы",
+      "categoryId": 13073185,
+      "priceMin": 1400,
+      "priceMax": 1400,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2790435
+      ]
+    },
+    {
+      "id": 13073193,
+      "title": "Подологическая зачистка ногтевых пластин 1 степени сложности",
+      "categoryId": 13073185,
+      "priceMin": 800,
+      "priceMax": 800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2790435
+      ]
+    },
+    {
+      "id": 13073192,
+      "title": "Подологическая зачистка ногтевых пластин 2 степени сложности",
+      "categoryId": 13073185,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2790435
+      ]
+    },
+    {
+      "id": 13073203,
+      "title": "Подология: ортониксия (титанов нить)",
+      "categoryId": 13073185,
+      "priceMin": 800,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2790435
+      ]
+    },
+    {
+      "id": 13073202,
+      "title": "Подология: установка системы унибрейс",
+      "categoryId": 13073185,
+      "priceMin": 1300,
+      "priceMax": 1300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2790435
+      ]
+    },
+    {
+      "id": 13089411,
+      "title": "Подология: Light system",
+      "categoryId": 13073185,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2790435
+      ]
+    },
+    {
+      "id": 13154676,
+      "title": "Лечебный массаж",
+      "categoryId": 11568788,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13156471,
+      "title": "Спортивный массаж",
+      "categoryId": 11568788,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13156472,
+      "title": "Спина+ШВЗ",
+      "categoryId": 11568788,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13154800,
+      "title": "Лимфодренажный массаж тела",
+      "categoryId": 11568788,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13154801,
+      "title": "Антицеллюлитный массаж тела",
+      "categoryId": 11568788,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13156475,
+      "title": "Антицеллюлитный массаж бёдер",
+      "categoryId": 11568788,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13156474,
+      "title": "Антицеллюлитный массаж живота",
+      "categoryId": 11568788,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13171252,
+      "title": "Классический расслабляющий массаж 1 час",
+      "categoryId": 11568788,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13287166,
+      "title": "Массаж лица",
+      "categoryId": 11568788,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13287167,
+      "title": "Лифтинг-массаж лица 30 мин",
+      "categoryId": 11568788,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 12419971,
+      "title": "Удаление тату лазером Honkon А4",
+      "categoryId": 12892505,
+      "priceMin": 5500,
+      "priceMax": 5500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 12419973,
+      "title": "Удаление тату лазером размер А5",
+      "categoryId": 12892505,
+      "priceMin": 3500,
+      "priceMax": 3500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 12419975,
+      "title": "Удаление тату лазером размер А6",
+      "categoryId": 12892505,
+      "priceMin": 2500,
+      "priceMax": 2500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 12419976,
+      "title": "Удаление тату лазером Honkon А7",
+      "categoryId": 12892505,
+      "priceMin": 1600,
+      "priceMax": 1600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 12419983,
+      "title": "Удаление тату лазером размер А8",
+      "categoryId": 12892505,
+      "priceMin": 1100,
+      "priceMax": 1100,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 12419985,
+      "title": "Удаление тату лазером Honkon А9",
+      "categoryId": 12892505,
+      "priceMin": 750,
+      "priceMax": 750,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
+      "id": 12419986,
+      "title": "Удаление тату лазером размер А10",
+      "categoryId": 12892505,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2122496
+      ]
+    },
+    {
       "id": 13323825,
       "title": "Микроигольчатый (зона вокруг глаз)",
       "categoryId": 13323823,
@@ -949,6 +3367,258 @@
   ],
   "specialists": [
     {
+      "id": 3040313,
+      "name": "Rafael Vanesyan",
+      "specialization": "Hairdresser",
+      "position": "Hairdresser",
+      "avatar": "https://assets.alteg.io/masters/sm/b/ba/ba2ceeaeffe36e6_20260723125456.png",
+      "bookable": true,
+      "serviceIds": [
+        12262352,
+        13560987,
+        13560988,
+        13560992,
+        13560993,
+        13560994,
+        12262357,
+        13560989,
+        13560990,
+        12262351,
+        12262353,
+        12262350,
+        12262355,
+        12262371,
+        13354690,
+        13354695,
+        12262368,
+        12768489,
+        12768471,
+        12768469,
+        12262375,
+        13510261,
+        12262361,
+        12262366,
+        12263477,
+        12263475,
+        12263476,
+        12263478,
+        12768804,
+        12768806,
+        12768807,
+        10411307,
+        10411310,
+        10411308,
+        10411314,
+        10411311,
+        10411315
+      ]
+    },
+    {
+      "id": 3024562,
+      "name": "Юлия Шакерова",
+      "specialization": "Парикмахер-стилист",
+      "position": "Парикмахер-стилист",
+      "avatar": "https://assets.alteg.io/masters/sm/4/45/4505ad98fea863a_20260723140334.png",
+      "bookable": true,
+      "serviceIds": [
+        12262352,
+        13560987,
+        13560988,
+        13560992,
+        13560993,
+        13560994,
+        12262351,
+        12262353,
+        12262350,
+        12262368,
+        12768489,
+        12768471,
+        12768469,
+        12262375,
+        13510261,
+        12262361,
+        12262366,
+        12263477,
+        12263475,
+        12263476,
+        12263478,
+        12768804,
+        12768806,
+        12768807,
+        12262334,
+        12262335,
+        12262336,
+        12841039,
+        12841040,
+        12841045,
+        12262342,
+        12262343,
+        12262344,
+        12262339,
+        12262340,
+        12262341,
+        12263470,
+        12263467,
+        12263468,
+        12263469,
+        12262347,
+        12262348,
+        12262349
+      ]
+    },
+    {
+      "id": 3007404,
+      "name": "Olga Benke",
+      "specialization": "Hairdresser",
+      "position": "Hairdresser",
+      "avatar": "https://assets.alteg.io/masters/sm/6/6e/6e95a189e5b0594_20260723135800.png",
+      "bookable": true,
+      "serviceIds": [
+        12262352,
+        13560987,
+        13560988,
+        13560992,
+        13560993,
+        13560994,
+        12262351,
+        12262353,
+        12262350,
+        12262355,
+        12262368,
+        12768489,
+        12768471,
+        12768469,
+        12262375,
+        12262361,
+        12262366,
+        12263477,
+        12263475,
+        12263476,
+        12263478,
+        12768804,
+        12768806,
+        12768807,
+        12262334,
+        12262335,
+        12262336,
+        12841039,
+        12841040,
+        12841045,
+        12262342,
+        12262343,
+        12262344,
+        12262339,
+        12262340,
+        12262341,
+        12263470,
+        12263467,
+        12263468,
+        12263469,
+        12262347,
+        12262348,
+        12262349,
+        10411307,
+        10411310,
+        10411315
+      ]
+    },
+    {
+      "id": 3005950,
+      "name": "Анастасия Урасинова",
+      "specialization": "Мастер ногтевого сервиса",
+      "position": "Мастер ногтевого сервиса",
+      "avatar": "https://assets.alteg.io/masters/sm/b/ba/ba75e9654d29853_20260325121234.png",
+      "bookable": true,
+      "serviceIds": [
+        12262333,
+        12262331,
+        12262326,
+        12262323,
+        12262329,
+        12262307,
+        12957442,
+        12262304,
+        13089616,
+        13089617,
+        12262314
+      ]
+    },
+    {
+      "id": 2994884,
+      "name": "Татьяна Архипенко",
+      "specialization": "Мастер ногтевого сервиса",
+      "position": "Мастер ногтевого сервиса",
+      "avatar": "https://assets.alteg.io/masters/sm/b/bd/bd28a50e0b5b19b_20260304141245.png",
+      "bookable": true,
+      "serviceIds": [
+        12262333,
+        12262331,
+        12262326,
+        12262323,
+        12262329,
+        12262307,
+        12957442,
+        12262304
+      ]
+    },
+    {
+      "id": 2942760,
+      "name": "Софья Филатова",
+      "specialization": "Мастер по наращиванию ресниц",
+      "position": "Мастер по наращиванию ресниц",
+      "avatar": "https://assets.alteg.io/masters/sm/e/e6/e670b9bda6f3656_20260105183256.png",
+      "bookable": true,
+      "serviceIds": [
+        13293812,
+        13293810,
+        10410332,
+        10410335,
+        10410336,
+        10410337,
+        10410340,
+        10410344,
+        13310370,
+        13310369,
+        13310371,
+        13310366,
+        13310365,
+        13310364,
+        13310367,
+        13310368,
+        13310363
+      ]
+    },
+    {
+      "id": 2861718,
+      "name": "Лидия Цибина",
+      "specialization": "Лазерная эпиляция",
+      "position": "Специалист по лазерной эпиляции",
+      "avatar": "https://assets.alteg.io/masters/sm/d/d0/d0d662b0072ebba_20250705092128.png",
+      "bookable": true,
+      "serviceIds": [
+        13275808,
+        13275809,
+        13275811,
+        13275801,
+        13275810,
+        13275806,
+        13275813,
+        13275815,
+        13275816,
+        13275814,
+        13275817,
+        13275807,
+        13275803,
+        13275804,
+        13275800,
+        13275812,
+        13275802,
+        13275805,
+        13497935,
+        13429389
+      ]
+    },
+    {
       "id": 2849662,
       "name": "Веста Шатилова",
       "specialization": "Специалист по лазерной эпиляции",
@@ -956,6 +3626,26 @@
       "avatar": "https://assets.alteg.io/masters/sm/b/bb/bb639e634bcbf5c_20250615130656.png",
       "bookable": true,
       "serviceIds": [
+        13275808,
+        13275809,
+        13275811,
+        13275801,
+        13275810,
+        13275806,
+        13275813,
+        13275815,
+        13275816,
+        13275814,
+        13275817,
+        13275807,
+        13275803,
+        13275804,
+        13275800,
+        13275812,
+        13275802,
+        13275805,
+        13497935,
+        13429389,
         13320068,
         13320069
       ]
@@ -1033,13 +3723,189 @@
         13361499,
         13361500
       ]
+    },
+    {
+      "id": 2122496,
+      "name": "Анастасия Селезнёва",
+      "specialization": "Брови / Перманентный макияж / ТАТУ",
+      "position": "Мастер по перманентному макияжу",
+      "avatar": "https://assets.alteg.io/masters/sm/5/5c/5cf42207b2652e8_20250324193724.png",
+      "bookable": true,
+      "serviceIds": [
+        13293812,
+        13293810,
+        13275846,
+        13275847,
+        13275851,
+        13275849,
+        13275848,
+        13275850,
+        13275852,
+        12422192,
+        13310370,
+        13310369,
+        13310371,
+        13310366,
+        13310365,
+        13310364,
+        13310367,
+        13310368,
+        13310363,
+        13275911,
+        13275912,
+        13275910,
+        13275909,
+        13275908,
+        13275907,
+        13275805,
+        13275919,
+        13275918,
+        13275917,
+        10506425,
+        10764913,
+        12419971,
+        12419973,
+        12419975,
+        12419976,
+        12419983,
+        12419985,
+        12419986
+      ]
+    },
+    {
+      "id": 2790435,
+      "name": "Светлана Гудкова",
+      "specialization": "Подолог",
+      "position": "Мастер ногтевого сервиса",
+      "avatar": "https://assets.alteg.io/masters/sm/7/7c/7cb7e2cb82afa3d_20250324192822.png",
+      "bookable": true,
+      "serviceIds": [
+        12262333,
+        12262331,
+        12262326,
+        12262323,
+        12262328,
+        12262327,
+        13073205,
+        13073206,
+        13073207,
+        13073208,
+        13089327,
+        13073193,
+        13073192,
+        13073203,
+        13073202,
+        13089411
+      ]
+    },
+    {
+      "id": 2747203,
+      "name": "Екатерина Худякова",
+      "specialization": "стилист-колорист",
+      "position": "Парикмахер-стилист",
+      "avatar": "https://assets.alteg.io/masters/sm/c/cb/cbdb252f73b06ef_20250324195123.png",
+      "bookable": true,
+      "serviceIds": [
+        12262371,
+        13354690,
+        13354695,
+        12262368,
+        12768489,
+        12768471,
+        12768469,
+        12262375,
+        12262374,
+        12262373,
+        12262372,
+        12262361,
+        12262366,
+        12263477,
+        12263475,
+        12263476,
+        12263478,
+        12768804,
+        12768806,
+        12768807,
+        12262334,
+        12262335,
+        12262336,
+        12841039,
+        12841040,
+        12841045,
+        12262342,
+        12262343,
+        12262344,
+        12262339,
+        12262340,
+        12262341,
+        12263470,
+        12263467,
+        12263468,
+        12263469,
+        12262347,
+        12262348,
+        12262349
+      ]
+    },
+    {
+      "id": 2121149,
+      "name": "Александра Салимова",
+      "specialization": "Стилист-колорист",
+      "position": "Парикмахер-стилист",
+      "avatar": "https://assets.alteg.io/masters/sm/9/9b/9b8119f6c196a24_20250324192658.png",
+      "bookable": true,
+      "serviceIds": [
+        13560987,
+        13560988,
+        13560989,
+        13560990,
+        12262371,
+        13354690,
+        13354695,
+        12262368,
+        12768489,
+        12768471,
+        12768469,
+        12262375,
+        12262374,
+        12262373,
+        12262372,
+        12262361,
+        12262366,
+        12263477,
+        12263475,
+        12263476,
+        12263478,
+        12768804,
+        12768806,
+        12768807,
+        12262334,
+        12262335,
+        12262336,
+        12841039,
+        12841040,
+        12841045,
+        12262342,
+        12262343,
+        12262344,
+        12262339,
+        12262340,
+        12262341,
+        12263470,
+        12263467,
+        12263468,
+        12263469,
+        12262347,
+        12262348,
+        12262349
+      ]
     }
   ],
   "stats": {
-    "categories": 14,
-    "services": 74,
-    "specialists": 2,
-    "mappedServices": 64,
-    "unmappedServices": 10
+    "categories": 40,
+    "services": 257,
+    "specialists": 13,
+    "mappedServices": 209,
+    "unmappedServices": 48
   }
 }
