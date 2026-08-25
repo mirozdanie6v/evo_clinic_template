@@ -1,12 +1,14 @@
 import { expect, test } from "@playwright/test";
 
 async function openRu(page:any){
-  await page.addInitScript(()=>localStorage.setItem("evo-lang","ru"));
   const errors:string[]=[];
   page.on("console",(message:any)=>{if(message.type()==="error")errors.push(message.text())});
   page.on("pageerror",(error:any)=>errors.push(error.message));
   await page.goto("/");
+  await page.evaluate(()=>localStorage.setItem("evo-lang","ru"));
+  await page.reload();
   await expect(page.getByTestId("topbar")).toBeVisible();
+  await expect(page.locator(".bottomNav")).toContainText("Услуги");
   return errors;
 }
 
@@ -58,5 +60,6 @@ test("manual language selection persists after reload", async ({page})=>{
   await expect(page.locator(".bottomNav")).toContainText("Dịch vụ");
   await page.reload();
   await expect(page.locator(".bottomNav")).toContainText("Dịch vụ");
+  await expect(page.locator("html")).toHaveAttribute("lang","vi");
   expect(errors).toEqual([]);
 });
