@@ -1,28 +1,174 @@
 "use client";
-import {useEffect,useState} from "react";
-type Lang="ru"|"en"|"vi"; type Screen="home"|"services"|"booking"|"ai"|"profile";
-const BOOK="https://n1324284.alteg.io/company/1258225/personal/menu?o=";
-const MEDIA="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/111003/";
-const services=[
- {ru:"Уход и обновление кожи",en:"Skin care & renewal",vi:"Chăm sóc & tái tạo da",noteRu:"Чистка лица и пилинг",noteEn:"Facial cleansing and peeling",noteVi:"Làm sạch da mặt và peel da",img:MEDIA+"d0719a5c-c5bf-40b4-a29d-47fd959e0bcd.png"},
- {ru:"Аппаратная косметология",en:"Device cosmetology",vi:"Thẩm mỹ công nghệ cao",noteRu:"SMAS-лифтинг",noteEn:"SMAS lifting",noteVi:"Nâng cơ SMAS",img:MEDIA+"5550bb7b-ccf0-4686-8eb3-ee9ef80db99b.jpg"},
- {ru:"Инъекционная косметология",en:"Injectable cosmetology",vi:"Thẩm mỹ tiêm",noteRu:"Биоревитализация · мезотерапия · ботулинотерапия",noteEn:"Biorevitalization · mesotherapy · botulinum",noteVi:"Biorevitalization · mesotherapy · botulinum",img:MEDIA+"6d50a4c0-43fa-4bd8-9d52-af2e539e81f6.webp"},
- {ru:"Контуры и качество кожи",en:"Contours & skin quality",vi:"Đường nét & chất lượng da",noteRu:"Контурная пластика и коллаген",noteEn:"Contour correction & collagen",noteVi:"Tạo đường nét & collagen",img:MEDIA+"b6040595-5b9a-4de2-8676-b835b5fbf79c.jpg"},
- {ru:"Нитевой лифтинг",en:"Thread lifting",vi:"Căng chỉ",noteRu:"Каркас и стимуляция коллагена",noteEn:"Support & collagen stimulation",noteVi:"Nâng đỡ & kích thích collagen",img:MEDIA+"4349a451-6388-4f69-8e82-83b1e70c1f9b.png"},
- {ru:"Восстановительные программы",en:"Restorative programs",vi:"Chương trình phục hồi",noteRu:"Плацентарная и инфузионная терапия",noteEn:"Placental & infusion therapy",noteVi:"Liệu pháp nhau thai & truyền dịch",img:MEDIA+"93f4a6b9-eaa3-4854-b4fb-05f4ce8d3f54.png"}
-];
-const tr={
- ru:{hero:"Косметология EVO в Нячанге",lead:"Процедуры, специалисты и запись — в одном мобильном интерфейсе.",services:"Услуги",book:"Записаться",specialists:"Специалисты",popular:"Популярные направления",all:"Смотреть все",open:"Онлайн-запись открыта",consult:"Консультация косметолога",ask:"Спросить ИИ",aiLead:"Помогу сориентироваться по направлениям EVO. Медицинские решения — после консультации специалиста.",ph:"Что выбрать для качества кожи?",send:"Спросить",profile:"Профиль",booking:"Запись",bookingLead:"Выберите услугу и время в официальной системе EVO.",external:"Открыть запись EVO",price:"Актуальную стоимость уточняйте при записи.",home:"Главная"},
- en:{hero:"EVO cosmetology in Nha Trang",lead:"Treatments, specialists and booking in one mobile interface.",services:"Services",book:"Book",specialists:"Specialists",popular:"Popular directions",all:"View all",open:"Online booking available",consult:"Cosmetology consultation",ask:"Ask AI",aiLead:"I can help you navigate EVO services. Medical decisions require a specialist consultation.",ph:"What may help skin quality?",send:"Ask",profile:"Profile",booking:"Booking",bookingLead:"Choose a service and time in EVO's official booking system.",external:"Open EVO booking",price:"Confirm the current price when booking.",home:"Home"},
- vi:{hero:"Thẩm mỹ EVO tại Nha Trang",lead:"Dịch vụ, chuyên gia và đặt lịch trong một giao diện di động.",services:"Dịch vụ",book:"Đặt lịch",specialists:"Chuyên gia",popular:"Dịch vụ nổi bật",all:"Xem tất cả",open:"Đặt lịch trực tuyến",consult:"Tư vấn thẩm mỹ",ask:"Hỏi AI",aiLead:"Tôi có thể giúp bạn tìm hiểu dịch vụ EVO. Quyết định y khoa cần tư vấn chuyên gia.",ph:"Dịch vụ nào cho chất lượng da?",send:"Hỏi",profile:"Hồ sơ",booking:"Đặt lịch",bookingLead:"Chọn dịch vụ và thời gian trong hệ thống chính thức của EVO.",external:"Mở đặt lịch EVO",price:"Xác nhận giá hiện tại khi đặt lịch.",home:"Trang chủ"}
-};
-function browserLang():Lang{if(typeof navigator==="undefined")return"ru";const x=navigator.language.toLowerCase();return x.startsWith("vi")?"vi":x.startsWith("en")?"en":"ru"}
-export default function App(){const[lang,setLang]=useState<Lang>("ru");const[screen,setScreen]=useState<Screen>("home");const[q,setQ]=useState("");const[a,setA]=useState("");useEffect(()=>{const s=localStorage.getItem("evo-lang") as Lang|null;setLang(s&&["ru","en","vi"].includes(s)?s:browserLang())},[]);const t=tr[lang];const name=(s:any)=>s[lang];const note=(s:any)=>lang==="ru"?s.noteRu:lang==="en"?s.noteEn:s.noteVi;const change=(l:Lang)=>{setLang(l);localStorage.setItem("evo-lang",l);document.documentElement.lang=l};const ask=()=>{if(!q.trim())return;setA(lang==="ru"?"Для качества кожи в EVO есть уходовые, аппаратные, инъекционные и коллагеностимулирующие направления. Точный вариант подбирает косметолог после оценки кожи и противопоказаний.":lang==="en"?"EVO offers skin care, device, injectable and collagen-stimulating options. A cosmetologist should choose the exact approach after assessing your skin and contraindications.":"EVO có chăm sóc da, công nghệ cao, thẩm mỹ tiêm và kích thích collagen. Chuyên gia sẽ chọn phương án phù hợp sau khi đánh giá da và chống chỉ định.")};return <main className="shell">
-<header><button className="brand" onClick={()=>setScreen("home")}><span>E</span><b>EVO<small>BEAUTY SPACE · NHA TRANG</small></b></button><div className="langs">{(["ru","en","vi"] as Lang[]).map(l=><button key={l} onClick={()=>change(l)} className={lang===l?"on":""}>{l.toUpperCase()}</button>)}</div></header>
-<section className="content">
-{screen==="home"&&<><div className="hero"><div className="heroText"><small>EVO BEAUTY SPACE</small><h1>{t.hero}</h1><p>{t.lead}</p><div><button onClick={()=>setScreen("booking")}>{t.book}</button><button className="ghost" onClick={()=>setScreen("services")}>{t.services}</button></div></div></div><button className="status" onClick={()=>setScreen("booking")}><i/><span><b>{t.open}</b><small>{t.consult}</small></span><em>→</em></button><div className="title"><h2>{t.popular}</h2><button onClick={()=>setScreen("services")}>{t.all}</button></div><div className="grid">{services.slice(0,4).map((s,i)=><button className="card" key={i} onClick={()=>setScreen("booking")}><img src={s.img} alt=""/><span><b>{name(s)}</b><small>{note(s)}</small></span></button>)}</div><div className="title"><h2>{t.specialists}</h2></div><div className="experts">{["Cosmetology & skin care","Device & aesthetic procedures","Thread lifting"].map((x,i)=><div key={x}><span>0{i+1}</span><b>{x}</b></div>)}</div></>}
-{screen==="services"&&<div className="page"><small>EVO CARE</small><h1>{t.services}</h1><p>{t.price}</p><div className="list">{services.map((s,i)=><button key={i} onClick={()=>setScreen("booking")}><img src={s.img} alt=""/><span><b>{name(s)}</b><small>{note(s)}</small></span><em>→</em></button>)}</div></div>}
-{screen==="booking"&&<div className="page"><small>EVO · ALTEGIO</small><h1>{t.booking}</h1><p>{t.bookingLead}</p><div className="booking"><div className="photo"/><div><b>{t.consult}</b><p>{t.price}</p><a href={BOOK} target="_blank" rel="noreferrer">{t.external}</a></div></div><div className="contact"><b>EVO Beauty Space</b><p>40 Đ. Bắc Sơn, Vĩnh Hải, Nha Trang</p><a href="tel:+84905080200">+84 905 080 200</a><br/><a href="mailto:evo.beauty.space@gmail.com">evo.beauty.space@gmail.com</a></div></div>}
-{screen==="ai"&&<div className="page"><small>EVO AI · DEMO</small><h1>{t.ask}</h1><p>{t.aiLead}</p><div className="chat"><div>{t.aiLead}</div>{a&&<div className="answer">{a}</div>}<section><input value={q} onChange={e=>setQ(e.target.value)} onKeyDown={e=>e.key==="Enter"&&ask()} placeholder={t.ph}/><button onClick={ask}>{t.send}</button></section></div></div>}
-{screen==="profile"&&<div className="page"><small>EVO CLIENT</small><h1>{t.profile}</h1><div className="profile"><span>E</span><div><b>EVO Guest</b><small>Demo client profile</small></div></div><button className="row" onClick={()=>setScreen("booking")}>{t.booking}<em>→</em></button><button className="row" onClick={()=>setScreen("services")}>{t.services}<em>→</em></button></div>}
-</section><nav>{[["⌂",t.home,"home"],["◇",t.services,"services"],["＋",t.booking,"booking"],["✦","AI","ai"],["○",t.profile,"profile"]].map(([ic,lab,id])=><button key={id} className={screen===id?"on":""} onClick={()=>setScreen(id as Screen)}><span>{ic}</span><small>{lab}</small></button>)}</nav></main>}
+
+import { FormEvent, useEffect, useMemo, useState } from "react";
+import { categories, getCategory, getService, getSpecialist, locations, services, specialists, type Lang } from "../data/evo";
+import { ui } from "../lib/i18n";
+import { addAppointment, makeAppointmentId, readAppointments, removeAppointment, type DemoAppointment } from "../lib/storage";
+
+type Screen = "home" | "services" | "service" | "specialists" | "specialist" | "booking" | "ai" | "profile" | "admin";
+type BookingDraft = { serviceId:string; specialistId:string; date:string; time:string; name:string; phone:string; email:string };
+
+const emptyBooking = ():BookingDraft => ({serviceId:"",specialistId:"",date:"",time:"",name:"",phone:"",email:""});
+const TIMES = ["10:00","12:30","15:00","17:30"];
+
+function browserLang():Lang {
+  if (typeof navigator === "undefined") return "ru";
+  const value = navigator.language.toLowerCase();
+  return value.startsWith("vi") ? "vi" : value.startsWith("en") ? "en" : "ru";
+}
+
+function formatDate(value:string, lang:Lang) {
+  if (!value) return "";
+  return new Intl.DateTimeFormat(lang === "ru" ? "ru-RU" : lang === "vi" ? "vi-VN" : "en-US", {weekday:"short",day:"numeric",month:"short"}).format(new Date(`${value}T12:00:00`));
+}
+
+export default function App() {
+  const [lang,setLang] = useState<Lang>("ru");
+  const [screen,setScreen] = useState<Screen>("home");
+  const [detailId,setDetailId] = useState("");
+  const [booking,setBooking] = useState<BookingDraft>(emptyBooking);
+  const [bookingStep,setBookingStep] = useState(0);
+  const [success,setSuccess] = useState(false);
+  const [appointments,setAppointments] = useState<DemoAppointment[]>([]);
+  const [dates,setDates] = useState<string[]>([]);
+  const [query,setQuery] = useState("");
+  const [answer,setAnswer] = useState<string[]>([]);
+  const [broadcast,setBroadcast] = useState("");
+  const [broadcastSaved,setBroadcastSaved] = useState(false);
+
+  useEffect(()=>{
+    const saved = localStorage.getItem("evo-lang") as Lang | null;
+    const resolved = saved && (["ru","en","vi"] as string[]).includes(saved) ? saved : browserLang();
+    setLang(resolved);
+    document.documentElement.lang = resolved;
+    setAppointments(readAppointments());
+    const now = new Date();
+    const next = Array.from({length:6},(_,index)=>{
+      const d = new Date(now);
+      d.setDate(now.getDate()+index+1);
+      return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+    });
+    setDates(next);
+    const sync = ()=>setAppointments(readAppointments());
+    window.addEventListener("evo-appointments-change",sync);
+    return ()=>window.removeEventListener("evo-appointments-change",sync);
+  },[]);
+
+  const t = ui[lang];
+  const location = locations[0];
+  const selectedService = getService(detailId);
+  const selectedSpecialist = getSpecialist(detailId);
+  const bookingService = getService(booking.serviceId);
+  const bookingSpecialist = getSpecialist(booking.specialistId);
+  const availableSpecialists = useMemo(()=>bookingService ? specialists.filter(s=>bookingService.specialistIds.includes(s.id)) : specialists,[bookingService]);
+  const uniqueClients = useMemo(()=>new Set(appointments.map(x=>x.phone || x.email).filter(Boolean)).size,[appointments]);
+
+  const changeLang = (value:Lang) => {
+    setLang(value);
+    localStorage.setItem("evo-lang",value);
+    document.documentElement.lang=value;
+  };
+
+  const openService = (id:string) => { setDetailId(id); setScreen("service"); window.scrollTo({top:0,behavior:"smooth"}); };
+  const openSpecialist = (id:string) => { setDetailId(id); setScreen("specialist"); window.scrollTo({top:0,behavior:"smooth"}); };
+  const startBooking = (serviceId="", specialistId="") => {
+    const service = getService(serviceId);
+    const normalizedSpecialist = specialistId || (service?.specialistIds.length===1 ? service.specialistIds[0] : "");
+    setBooking({...emptyBooking(),serviceId,specialistId:normalizedSpecialist});
+    setBookingStep(serviceId ? (normalizedSpecialist ? 2 : 1) : 0);
+    setSuccess(false);
+    setScreen("booking");
+    window.scrollTo({top:0,behavior:"smooth"});
+  };
+
+  const chooseService = (id:string) => {
+    const service = getService(id);
+    setBooking(prev=>({...prev,serviceId:id,specialistId:service?.specialistIds.length===1?service.specialistIds[0]:"",date:"",time:""}));
+    setBookingStep(service?.specialistIds.length===1 ? 2 : 1);
+  };
+
+  const submitAppointment = () => {
+    if (!booking.serviceId || !booking.specialistId || !booking.date || !booking.time || !booking.name.trim() || !booking.phone.trim()) return;
+    const item:DemoAppointment = {...booking,id:makeAppointmentId(),createdAt:new Date().toISOString()};
+    addAppointment(item);
+    setAppointments(readAppointments());
+    setSuccess(true);
+  };
+
+  const repeatAppointment = (item:DemoAppointment) => {
+    setBooking({serviceId:item.serviceId,specialistId:item.specialistId,date:"",time:"",name:item.name,phone:item.phone,email:item.email});
+    setBookingStep(2);
+    setSuccess(false);
+    setScreen("booking");
+  };
+
+  const deleteAppointment = (id:string) => {
+    removeAppointment(id);
+    setAppointments(readAppointments());
+  };
+
+  const askCatalog = (event?:FormEvent) => {
+    event?.preventDefault();
+    const q = query.trim().toLowerCase();
+    if (!q) return;
+    const tokens = q.split(/[^\p{L}\p{N}]+/u).filter(x=>x.length>2);
+    const scored = services.map(service=>{
+      const category = getCategory(service.categoryId);
+      const haystack = [...Object.values(service.name),...Object.values(service.description),...(category?Object.values(category.name):[])].join(" ").toLowerCase();
+      const score = tokens.reduce((sum,token)=>sum+(haystack.includes(token)?1:0),0);
+      return {service,score};
+    }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,3).map(x=>x.service.id);
+    setAnswer(scored.length ? scored : ["consultation"]);
+  };
+
+  const nav = (target:Screen) => { setScreen(target); setSuccess(false); window.scrollTo({top:0,behavior:"smooth"}); };
+  const activeNav = screen==="service"||screen==="specialists"||screen==="specialist" ? "services" : screen==="admin" ? "profile" : screen;
+
+  return <main className="shell">
+    <header className="topbar">
+      <button className="brand" onClick={()=>nav("home")} aria-label="EVO Beauty Space home"><span className="brandMark">E</span><span><b>EVO</b><small>BEAUTY SPACE · NHA TRANG</small></span></button>
+      <div className="langs" aria-label="Language">{(["ru","en","vi"] as Lang[]).map(value=><button key={value} className={lang===value?"on":""} onClick={()=>changeLang(value)}>{value.toUpperCase()}</button>)}</div>
+    </header>
+
+    <section className="content">
+      {screen==="home" && <>
+        <section className="hero"><div className="heroShade"/><div className="heroText"><small>{t.home.eyebrow}</small><h1>{t.home.title}</h1><p>{t.home.lead}</p><div className="actions"><button className="primary light" onClick={()=>startBooking()}>{t.common.book}</button><button className="secondary light" onClick={()=>nav("services")}>{t.nav.services}</button></div></div></section>
+        <button className="status" onClick={()=>startBooking("consultation")}><i/><span><b>{t.home.open}</b><small>{t.home.consult}</small></span><em>→</em></button>
+        <SectionTitle title={t.home.popular} action={t.home.all} onAction={()=>nav("services")}/>
+        <div className="categoryGrid">{categories.slice(1,5).map(category=><button className="categoryCard" key={category.id} onClick={()=>{const first=services.find(x=>x.categoryId===category.id); if(first)openService(first.id)}}><img src={category.image} alt=""/><span><b>{category.name[lang]}</b><small>{category.note[lang]}</small></span></button>)}</div>
+        <SectionTitle title={t.home.specialists} action={t.home.all} onAction={()=>nav("specialists")}/>
+        <div className="specialistStrip">{specialists.slice(0,3).map(s=><button className="specialistMini" key={s.id} onClick={()=>openSpecialist(s.id)}><img src={s.image} alt=""/><span><b>{s.name[lang]}</b><small>{s.role[lang]}</small></span><em>→</em></button>)}</div>
+        <section className="locationCard"><small>EVO · NHA TRANG</small><h2>{t.home.contacts}</h2><p>{location.address}</p><div className="contactLinks"><a href={`tel:${location.phone.replace(/\s/g,"")}`}>{location.phone}</a><a href={`mailto:${location.email}`}>{location.email}</a></div><div className="actions"><a className="primary" href={location.mapUrl} target="_blank" rel="noreferrer">{t.home.route}</a><a className="secondary" href={location.bookingUrl} target="_blank" rel="noreferrer">Altegio</a></div></section>
+      </>}
+
+      {screen==="services" && <section className="page"><PageHead eyebrow="EVO CARE" title={t.services.title} lead={t.services.lead}/><div className="serviceGroups">{categories.map(category=><section className="serviceGroup" key={category.id}><div className="groupHead"><div><h2>{category.name[lang]}</h2><p>{category.note[lang]}</p></div></div><div className="serviceList">{services.filter(s=>s.categoryId===category.id).map(service=><button className="serviceRow" key={service.id} onClick={()=>openService(service.id)}><img src={service.image} alt=""/><span><b>{service.name[lang]}</b><small>{service.description[lang]}</small><em>{service.price[lang]} · {service.duration} min</em></span><strong>→</strong></button>)}</div></section>)}</div><button className="linkRow" onClick={()=>nav("specialists")}>{t.specialists.title}<span>→</span></button></section>}
+
+      {screen==="service" && selectedService && <section className="page"><button className="back" onClick={()=>nav("services")}>← {t.common.back}</button><div className="detailHero"><img src={selectedService.image} alt=""/></div><small>{getCategory(selectedService.categoryId)?.name[lang]}</small><h1>{selectedService.name[lang]}</h1><p>{selectedService.description[lang]}</p><div className="facts"><div><small>{t.services.price}</small><b>{selectedService.price[lang]}</b></div><div><small>{t.services.duration}</small><b>{selectedService.duration} min</b></div></div><h3>{t.services.specialists}</h3><div className="specialistStrip">{specialists.filter(s=>selectedService.specialistIds.includes(s.id)).map(s=><button className="specialistMini" key={s.id} onClick={()=>openSpecialist(s.id)}><img src={s.image} alt=""/><span><b>{s.name[lang]}</b><small>{s.role[lang]}</small></span><em>→</em></button>)}</div><button className="primary full" onClick={()=>startBooking(selectedService.id)}>{t.services.book}</button></section>}
+
+      {screen==="specialists" && <section className="page"><PageHead eyebrow="EVO TEAM" title={t.specialists.title} lead={t.specialists.lead}/><div className="specialistGrid">{specialists.map(s=><button className="specialistCard" key={s.id} onClick={()=>openSpecialist(s.id)}><img src={s.image} alt=""/><span>{s.demo&&<em>{t.specialists.demo}</em>}<b>{s.name[lang]}</b><small>{s.role[lang]}</small></span></button>)}</div></section>}
+
+      {screen==="specialist" && selectedSpecialist && <section className="page"><button className="back" onClick={()=>nav("specialists")}>← {t.common.back}</button><div className="detailHero specialistPhoto"><img src={selectedSpecialist.image} alt=""/></div><small>{selectedSpecialist.demo?t.specialists.demo:"EVO TEAM"}</small><h1>{selectedSpecialist.name[lang]}</h1><p>{selectedSpecialist.bio[lang]}</p><h3>{t.specialists.services}</h3><div className="compactList">{services.filter(s=>selectedSpecialist.serviceIds.includes(s.id)).map(service=><button key={service.id} onClick={()=>openService(service.id)}><span><b>{service.name[lang]}</b><small>{service.price[lang]}</small></span><em>→</em></button>)}</div><button className="primary full" onClick={()=>startBooking("",selectedSpecialist.id)}>{t.common.book}</button></section>}
+
+      {screen==="booking" && <section className="page"><PageHead eyebrow="EVO BOOKING" title={t.booking.title} lead={t.booking.demo}/>{success ? <div className="successCard"><span>✓</span><h2>{t.booking.success}</h2><p>{t.booking.successNote}</p><button className="primary full" onClick={()=>nav("profile")}>{t.nav.profile}</button><a className="secondary full center" href={location.bookingUrl} target="_blank" rel="noreferrer">{t.booking.openAltegio}</a></div> : <div className="bookingFlow"><div className="stepper">{[t.booking.stepService,t.booking.stepSpecialist,t.booking.stepDate,t.booking.stepTime,t.booking.stepContact,t.booking.stepReview].map((label,index)=><span key={label} className={bookingStep===index?"on":bookingStep>index?"done":""}>{index+1}<small>{label}</small></span>)}</div>
+        {bookingStep===0&&<div><h2>{t.booking.chooseService}</h2><div className="choiceList">{services.map(service=><button key={service.id} onClick={()=>chooseService(service.id)}><img src={service.image} alt=""/><span><b>{service.name[lang]}</b><small>{service.price[lang]}</small></span><em>→</em></button>)}</div></div>}
+        {bookingStep===1&&<div><h2>{t.booking.chooseSpecialist}</h2>{availableSpecialists.length?<div className="choiceList">{availableSpecialists.map(s=><button key={s.id} onClick={()=>{setBooking(prev=>({...prev,specialistId:s.id}));setBookingStep(2)}}><img src={s.image} alt=""/><span><b>{s.name[lang]}</b><small>{s.role[lang]}</small></span><em>→</em></button>)}</div>:<p>{t.booking.noSpecialists}</p>}<button className="back bottomGap" onClick={()=>setBookingStep(0)}>← {t.common.back}</button></div>}
+        {bookingStep===2&&<div><h2>{t.booking.chooseDate}</h2><div className="dateGrid">{dates.map(date=><button className={booking.date===date?"on":""} key={date} onClick={()=>{setBooking(prev=>({...prev,date}));setBookingStep(3)}}><b>{formatDate(date,lang)}</b></button>)}</div><button className="back bottomGap" onClick={()=>setBookingStep(bookingService?.specialistIds.length===1?0:1)}>← {t.common.back}</button></div>}
+        {bookingStep===3&&<div><h2>{t.booking.chooseTime}</h2><div className="timeGrid">{TIMES.map(time=><button className={booking.time===time?"on":""} key={time} onClick={()=>{setBooking(prev=>({...prev,time}));setBookingStep(4)}}>{time}</button>)}</div><button className="back bottomGap" onClick={()=>setBookingStep(2)}>← {t.common.back}</button></div>}
+        {bookingStep===4&&<form className="contactForm" onSubmit={e=>{e.preventDefault();if(booking.name.trim()&&booking.phone.trim())setBookingStep(5)}}><h2>{t.booking.yourDetails}</h2><label>{t.booking.name}<input required autoComplete="name" value={booking.name} onChange={e=>setBooking(prev=>({...prev,name:e.target.value}))}/></label><label>{t.booking.phone}<input required inputMode="tel" autoComplete="tel" value={booking.phone} onChange={e=>setBooking(prev=>({...prev,phone:e.target.value}))}/></label><label>{t.booking.email}<input inputMode="email" autoComplete="email" value={booking.email} onChange={e=>setBooking(prev=>({...prev,email:e.target.value}))}/></label><div className="actions"><button type="button" className="secondary" onClick={()=>setBookingStep(3)}>{t.common.back}</button><button className="primary" type="submit">{t.common.next}</button></div></form>}
+        {bookingStep===5&&<div><h2>{t.booking.review}</h2><div className="reviewCard"><ReviewRow label={t.booking.stepService} value={bookingService?.name[lang]||"—"}/><ReviewRow label={t.booking.stepSpecialist} value={bookingSpecialist?.name[lang]||"—"}/><ReviewRow label={t.booking.stepDate} value={formatDate(booking.date,lang)}/><ReviewRow label={t.booking.stepTime} value={booking.time}/><ReviewRow label={t.booking.name} value={booking.name}/><ReviewRow label={t.booking.phone} value={booking.phone}/></div><div className="actions"><button className="secondary" onClick={()=>setBookingStep(4)}>{t.common.back}</button><button className="primary" onClick={submitAppointment}>{t.booking.confirm}</button></div></div>}
+      </div>}</section>}
+
+      {screen==="ai" && <section className="page"><PageHead eyebrow="EVO AI · DEMO" title={t.ai.title} lead={t.ai.lead}/><div className="chat"><div className="bubble">{t.ai.hello}</div>{answer.length>0&&<div className="answerBox"><b>{t.ai.recommend}</b>{answer.map(id=>{const service=getService(id);return service?<button key={id} onClick={()=>openService(id)}><span><strong>{service.name[lang]}</strong><small>{service.description[lang]}</small></span><em>→</em></button>:null})}</div>}<form className="chatForm" onSubmit={askCatalog}><input value={query} onChange={e=>setQuery(e.target.value)} placeholder={t.ai.placeholder}/><button>{t.ai.ask}</button></form></div></section>}
+
+      {screen==="profile" && <section className="page"><PageHead eyebrow="EVO CLIENT" title={t.profile.title}/><div className="profileCard"><span>E</span><div><b>{appointments[0]?.name||t.profile.guest}</b><small>{t.profile.demo}</small></div></div><SectionTitle title={t.profile.appointments}/>{appointments.length===0?<div className="emptyState"><b>{t.profile.empty}</b><p>{t.profile.emptyNote}</p><button className="primary" onClick={()=>startBooking()}>{t.common.book}</button></div>:<div className="appointmentList">{appointments.map(item=>{const service=getService(item.serviceId);const specialist=getSpecialist(item.specialistId);return <article key={item.id}><small>{formatDate(item.date,lang)} · {item.time}</small><h3>{service?.name[lang]}</h3><p>{specialist?.name[lang]}</p><div className="actions"><button className="secondary small" onClick={()=>repeatAppointment(item)}>{t.profile.repeat}</button><button className="danger small" onClick={()=>deleteAppointment(item.id)}>{t.profile.delete}</button></div></article>})}</div>}<button className="linkRow" onClick={()=>nav("admin")}>{t.admin.title}<span>→</span></button></section>}
+
+      {screen==="admin" && <section className="page"><button className="back" onClick={()=>nav("profile")}>← {t.common.back}</button><PageHead eyebrow="EVO INTERNAL · DEMO" title={t.admin.title} lead={t.admin.lead}/><div className="stats"><div><b>{appointments.length}</b><small>{t.admin.statsAppointments}</small></div><div><b>{uniqueClients}</b><small>{t.admin.statsClients}</small></div><div><b>{services.length}</b><small>{t.admin.statsServices}</small></div></div><h2>{t.admin.appointments}</h2>{appointments.length===0?<div className="emptyState"><p>{t.admin.noAppointments}</p></div>:<div className="adminTable">{appointments.map(item=><div key={item.id}><span><b>{item.name}</b><small>{item.phone}</small></span><span><b>{getService(item.serviceId)?.name[lang]}</b><small>{formatDate(item.date,lang)} · {item.time}</small></span></div>)}</div>}<h2>{t.admin.broadcast}</h2><div className="broadcastBox"><label>{t.admin.broadcastText}<textarea value={broadcast} onChange={e=>{setBroadcast(e.target.value);setBroadcastSaved(false)}}/></label><button className="primary" onClick={()=>{if(broadcast.trim()){localStorage.setItem("evo-demo-broadcast",broadcast);setBroadcastSaved(true)}}}>{t.admin.broadcastDemo}</button>{broadcastSaved&&<small className="saved">✓ {t.admin.saved}</small>}</div></section>}
+    </section>
+
+    <nav className="bottomNav">{[["⌂",t.nav.home,"home"],["◇",t.nav.services,"services"],["＋",t.nav.booking,"booking"],["✦",t.nav.ai,"ai"],["○",t.nav.profile,"profile"]].map(([icon,label,id])=><button key={id} className={activeNav===id?"on":""} onClick={()=>id==="booking"?startBooking():nav(id as Screen)}><span>{icon}</span><small>{label}</small></button>)}</nav>
+  </main>;
+}
+
+function PageHead({eyebrow,title,lead}:{eyebrow?:string;title:string;lead?:string}) { return <div className="pageHead">{eyebrow&&<small>{eyebrow}</small>}<h1>{title}</h1>{lead&&<p>{lead}</p>}</div> }
+function SectionTitle({title,action,onAction}:{title:string;action?:string;onAction?:()=>void}) { return <div className="sectionTitle"><h2>{title}</h2>{action&&onAction&&<button onClick={onAction}>{action}</button>}</div> }
+function ReviewRow({label,value}:{label:string;value:string}) { return <div><small>{label}</small><b>{value}</b></div> }
