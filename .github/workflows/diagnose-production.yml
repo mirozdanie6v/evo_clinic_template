@@ -1,0 +1,40 @@
+name: Diagnose production assets
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - '.github/workflows/diagnose-production.yml'
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check production HTML and CSS
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='https://evo-beauty-miniapp.mirozdanie6v.workers.dev'
+          echo '=== HOME ==='
+          curl -sS -L -D home.headers -o home.html -w 'HTTP %{http_code}\nTYPE %{content_type}\n' "$BASE/"
+          cat home.headers
+          echo '=== CSS REFERENCES ==='
+          grep -oE 'href="[^"]+\.css[^"]*"' home.html || true
+          CSS_PATH=$(grep -oE '/_next/static/[^" ]+\.css' home.html | head -n1 || true)
+          if [ -z "$CSS_PATH" ]; then
+            echo 'NO_CSS_REFERENCE_IN_HTML'
+            head -c 1500 home.html
+            exit 2
+          fi
+          echo "CSS_PATH=$CSS_PATH"
+          echo '=== CSS RESPONSE ==='
+          curl -sS -L -D css.headers -o css.body -w 'HTTP %{http_code}\nTYPE %{content_type}\nSIZE %{size_download}\n' "$BASE$CSS_PATH"
+          cat css.headers
+          echo '=== CSS BODY PREFIX ==='
+          head -c 500 css.body
+          echo
+          grep -qi '^content-type: text/css' css.headers || { echo 'CSS_CONTENT_TYPE_INVALID'; exit 3; }
+          test -s css.body || { echo 'CSS_BODY_EMPTY'; exit 4; }
+          grep -q ':root' css.body || { echo 'EXPECTED_GLOBAL_CSS_NOT_FOUND'; exit 5; }
+          echo 'PRODUCTION_CSS_OK'
