@@ -9,6 +9,7 @@ export type Specialist = {id:string;name:Localized;role:Localized;bio:Localized;
 export type Location = {id:string;name:string;address:string;phone:string;email:string;altegioCompanyId:number;bookingUrl:string;mapUrl:string;telegramUrl:string};
 
 const MEDIA="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/111003/";
+const OFFICIAL_BOOKING_COMPANY_ID=1258225;
 export const brandLogoUrl=MEDIA+"2ae8cc03-27cf-4fc8-a187-507c0d31ea4b.webp";
 export const brandTelegramUrl="https://t.me/evo_vn";
 
@@ -49,8 +50,8 @@ const specialistRole=(position?:string,specialization?:string):Localized=>{
 export const catalogMeta={...snapshot.meta,snapshotStats:snapshot.stats};
 export const locations:Location[]=[{
   id:"north",name:snapshot.location.title,address:snapshot.location.address,phone:snapshot.location.phone,
-  email:snapshot.location.email||"evo.beauty.space@gmail.com",altegioCompanyId:snapshot.location.id,
-  bookingUrl:`https://n1324284.alteg.io/company/${snapshot.location.id}/personal/menu?o=`,
+  email:snapshot.location.email||"evo.beauty.space@gmail.com",altegioCompanyId:OFFICIAL_BOOKING_COMPANY_ID,
+  bookingUrl:`https://n1324284.alteg.io/company/${OFFICIAL_BOOKING_COMPANY_ID}/personal/menu?o=`,
   mapUrl:`https://www.google.com/maps/search/?api=1&query=${snapshot.location.lat},${snapshot.location.lon}`,
   telegramUrl:brandTelegramUrl
 }];
