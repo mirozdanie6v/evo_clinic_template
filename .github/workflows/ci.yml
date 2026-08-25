@@ -5,6 +5,10 @@ on:
   push:
     branches: [develop]
 
+concurrency:
+  group: evo-ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
