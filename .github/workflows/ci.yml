@@ -24,6 +24,9 @@ jobs:
           test ! -d static
           grep -q 'from "../data/evo"' app/page.tsx
           grep -q 'font-size:16px' app/globals.css
+          grep -q 'serviceTranslations' data/evo.ts
+          grep -q 'brandLogoUrl' app/page.tsx
+          grep -q '@evo_vn' app/page.tsx
           ! grep -Eiq 'caries|root-canal|veneer-crown|digital-smile|implantation|kids-caries' data/evo.ts
           node <<'NODE'
           const x=require('./data/altegio-snapshot.json');
@@ -49,3 +52,9 @@ jobs:
           test -s /tmp/evo-home.html
           grep -q 'EVO Beauty Space' /tmp/evo-home.html
           grep -q '/_next/static/' /tmp/evo-home.html
+          kill $PID || true
+          trap - EXIT
+      - name: Install mobile browser engines
+        run: npx playwright install --with-deps chromium webkit
+      - name: Android Chromium + iPhone WebKit E2E
+        run: npm run test:e2e
