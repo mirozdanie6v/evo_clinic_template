@@ -1,0 +1,42 @@
+name: Hydrate Altegio snapshot
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'tools/normalize-altegio.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  hydrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Download last validated EVO network snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download 31729361133 -n evo-altegio-catalog -D artifacts/altegio
+      - name: Normalize cosmetology catalog
+        run: node tools/normalize-altegio.mjs
+      - name: Commit normalized snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/altegio-snapshot.json
+          if git diff --cached --quiet; then
+            echo 'Snapshot unchanged'
+            exit 0
+          fi
+          git commit -m 'Update normalized EVO Altegio snapshot'
+          git pull --rebase origin develop
+          git push origin HEAD:develop
