@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
-      - name: Guard production structure and catalog
+      - name: Guard production structure and full EVO catalog
         shell: bash
         run: |
           set -euo pipefail
@@ -32,15 +32,29 @@ jobs:
           grep -q 'brandLogoUrl' app/page.tsx
           grep -q '@evo_vn' app/page.tsx
           grep -q 'OFFICIAL_BOOKING_COMPANY_ID=1258225' data/evo.ts
+          grep -q 'service-group-grid' app/page.tsx
+          grep -q 'booking-group-filter' app/page.tsx
+          grep -q '"hair"' data/evo.ts
+          grep -q '"nails"' data/evo.ts
+          grep -q '"laser"' data/evo.ts
+          grep -q '"brows-pmu"' data/evo.ts
+          grep -q '"tattoo-body"' data/evo.ts
+          grep -q '"cosmetology"' data/evo.ts
           ! grep -Eiq 'caries|root-canal|veneer-crown|digital-smile|implantation|kids-caries' data/evo.ts
           node <<'NODE'
           const x=require('./data/altegio-snapshot.json');
           if(x.meta.sourceLocationId!==251848) throw new Error('Expected EVO NORTH snapshot');
+          if(x.meta.scope!=='EVO NORTH full public catalog') throw new Error(`Unexpected scope: ${x.meta.scope}`);
           if(!String(x.meta.extractedAt).startsWith('2026-08-25')) throw new Error('Altegio snapshot is not the validated 2026-08-25 refresh');
-          if(x.categories.length<14) throw new Error(`Catalog too small: ${x.categories.length} categories`);
-          if(x.services.length<70) throw new Error(`Catalog too small: ${x.services.length} services`);
-          if(x.specialists.length<1) throw new Error('No mapped Altegio specialists');
-          console.log('Catalog guard OK',x.stats);
+          if(x.categories.length<40) throw new Error(`Full EVO catalog too small: ${x.categories.length} categories`);
+          if(x.services.length<250) throw new Error(`Full EVO catalog too small: ${x.services.length} services`);
+          if(x.specialists.length<10) throw new Error(`Too few EVO specialists: ${x.specialists.length}`);
+          const required=['Стрижки / Укладки','Маникюр','Подология','Перманентный макияж','Женская эпиляция','Удаление тату лазером','Массаж','Ботулинотерапия'];
+          const names=new Set(x.categories.map(c=>c.title));
+          for(const name of required) if(!names.has(name)) throw new Error(`Missing EVO direction: ${name}`);
+          const serviceTitles=new Set(x.services.map(s=>s.title));
+          if(![...serviceTitles].some(x=>x.includes('Художественная татуировка'))) throw new Error('Art tattoo service missing');
+          console.log('Full EVO catalog guard OK',x.stats);
           NODE
       - run: npm run build
       - name: Local runtime smoke
