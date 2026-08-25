@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
-      - name: Guard production structure
+      - name: Guard production structure and catalog
         shell: bash
         run: |
           set -euo pipefail
@@ -25,4 +25,27 @@ jobs:
           grep -q 'from "../data/evo"' app/page.tsx
           grep -q 'font-size:16px' app/globals.css
           ! grep -Eiq 'caries|root-canal|veneer-crown|digital-smile|implantation|kids-caries' data/evo.ts
+          node <<'NODE'
+          const x=require('./data/altegio-snapshot.json');
+          if(x.meta.sourceLocationId!==251848) throw new Error('Expected EVO NORTH snapshot');
+          if(!String(x.meta.extractedAt).startsWith('2026-08-25')) throw new Error('Altegio snapshot is not the validated 2026-08-25 refresh');
+          if(x.categories.length<14) throw new Error(`Catalog too small: ${x.categories.length} categories`);
+          if(x.services.length<70) throw new Error(`Catalog too small: ${x.services.length} services`);
+          if(x.specialists.length<1) throw new Error('No mapped Altegio specialists');
+          console.log('Catalog guard OK',x.stats);
+          NODE
       - run: npm run build
+      - name: Local runtime smoke
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm start -- -p 3000 >/tmp/evo-next.log 2>&1 &
+          PID=$!
+          trap 'kill $PID || true' EXIT
+          for attempt in 1 2 3 4 5 6 7 8; do
+            if curl -fsS http://127.0.0.1:3000/ -o /tmp/evo-home.html; then break; fi
+            sleep 2
+          done
+          test -s /tmp/evo-home.html
+          grep -q 'EVO Beauty Space' /tmp/evo-home.html
+          grep -q '/_next/static/' /tmp/evo-home.html
