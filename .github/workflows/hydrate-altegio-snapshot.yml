@@ -4,6 +4,7 @@ on:
     branches: [develop]
     paths:
       - 'tools/normalize-altegio.mjs'
+      - '.github/workflows/hydrate-altegio-snapshot.yml'
   workflow_dispatch:
 
 permissions:
