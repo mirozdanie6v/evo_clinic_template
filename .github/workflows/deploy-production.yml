@@ -20,7 +20,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      - name: Verify production HTML and CSS
+      - name: Verify production HTML CSS and JS
         shell: bash
         run: |
           set -euo pipefail
@@ -28,14 +28,19 @@ jobs:
           for attempt in 1 2 3 4 5 6; do
             curl -sS -L -D home.headers -o home.html "$BASE/?smoke=${GITHUB_SHA}-${attempt}"
             CSS_PATH=$(grep -oE '/_next/static/[^" ]+\.css' home.html | head -n1 || true)
-            if [ -n "$CSS_PATH" ]; then
-              break
-            fi
+            JS_PATH=$(grep -oE '/_next/static/[^" ]+\.js' home.html | head -n1 || true)
+            if [ -n "$CSS_PATH" ] && [ -n "$JS_PATH" ]; then break; fi
             sleep 5
           done
-          test -n "$CSS_PATH" || { echo 'No Next.js CSS reference in production HTML'; head -c 1200 home.html; exit 2; }
+          grep -q 'EVO Beauty Space' home.html || { echo 'Expected EVO app markup not found'; head -c 1500 home.html; exit 2; }
+          ! grep -q 'href="styles.css"' home.html || { echo 'Legacy static HTML is being served'; exit 3; }
+          test -n "$CSS_PATH" || { echo 'No Next.js CSS reference'; exit 4; }
+          test -n "$JS_PATH" || { echo 'No Next.js JS reference'; exit 5; }
           curl -sS -L -D css.headers -o css.body "$BASE$CSS_PATH"
-          grep -qi '^content-type: text/css' css.headers || { echo 'Production CSS has invalid content-type'; cat css.headers; exit 3; }
-          test -s css.body || { echo 'Production CSS body is empty'; exit 4; }
-          grep -q ':root' css.body || { echo 'Expected global CSS not found in production asset'; head -c 500 css.body; exit 5; }
-          echo "Production CSS verified: $CSS_PATH"
+          grep -qi '^content-type: text/css' css.headers || { echo 'Production CSS has invalid content-type'; cat css.headers; exit 6; }
+          test -s css.body || { echo 'Production CSS body is empty'; exit 7; }
+          grep -q ':root' css.body || { echo 'Expected global CSS not found'; exit 8; }
+          curl -sS -L -D js.headers -o js.body "$BASE$JS_PATH"
+          grep -Eqi '^content-type: (application|text)/(javascript|x-javascript)' js.headers || { echo 'Production JS has invalid content-type'; cat js.headers; exit 9; }
+          test -s js.body || { echo 'Production JS body is empty'; exit 10; }
+          echo "Production assets verified: $CSS_PATH $JS_PATH"
