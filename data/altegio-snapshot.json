@@ -1,0 +1,1045 @@
+{
+  "meta": {
+    "source": "Altegio public booking catalog",
+    "extractedAt": "2026-08-13T18:12:41.838Z",
+    "normalizedAt": "2026-08-25T08:24:13.348Z",
+    "sourceLocationId": 251848,
+    "priceUnit": "thousand-vnd"
+  },
+  "location": {
+    "id": 251848,
+    "title": "EVO NORTH",
+    "publicTitle": "Evo на севере Нячанга",
+    "address": "Đường Bắc Sơn, 40, Nha Trang, Khánh Hòa",
+    "phone": "+84 9 050 80 200",
+    "email": "",
+    "lat": 12.2786674,
+    "lon": 109.2010564,
+    "currency": "₫"
+  },
+  "categories": [
+    {
+      "id": 13249482,
+      "title": "Консультация косметолога"
+    },
+    {
+      "id": 13275856,
+      "title": "Биоревитализация"
+    },
+    {
+      "id": 13249484,
+      "title": "Мезотерапия"
+    },
+    {
+      "id": 13275874,
+      "title": "Плацентарная терапия"
+    },
+    {
+      "id": 13249481,
+      "title": "Коллагенотерапия"
+    },
+    {
+      "id": 13249480,
+      "title": "Коллагеностимуляция"
+    },
+    {
+      "id": 13275871,
+      "title": "Инфузионная терапия"
+    },
+    {
+      "id": 13275870,
+      "title": "Ботулинотерапия"
+    },
+    {
+      "id": 13275872,
+      "title": "Контурная пластика"
+    },
+    {
+      "id": 13275925,
+      "title": "Нитевой лифтинг"
+    },
+    {
+      "id": 13249446,
+      "title": "Эстетические процедуры (косметология)"
+    },
+    {
+      "id": 13323823,
+      "title": "Микроигольчатый RF-лифтинг"
+    },
+    {
+      "id": 13361493,
+      "title": "Удаление новообразований"
+    },
+    {
+      "id": 13440628,
+      "title": "Плазмотерапия"
+    }
+  ],
+  "services": [
+    {
+      "id": 13275854,
+      "title": "Консультация + назначение лечения",
+      "categoryId": 13249482,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13481991,
+      "title": "Первичный прием врача-дерматолога",
+      "categoryId": 13249482,
+      "priceMin": 800,
+      "priceMax": 800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13481992,
+      "title": "Повторный прием врача-дерматолога",
+      "categoryId": 13249482,
+      "priceMin": 400,
+      "priceMax": 400,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275859,
+      "title": "Hyaron",
+      "categoryId": 13275856,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275858,
+      "title": "Aquashine",
+      "categoryId": 13275856,
+      "priceMin": 3000,
+      "priceMax": 3000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275865,
+      "title": "PDRN (Syniro, Elaxen)",
+      "categoryId": 13275856,
+      "priceMin": 2700,
+      "priceMax": 2700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275863,
+      "title": "MesoXantin F199",
+      "categoryId": 13275856,
+      "priceMin": 4900,
+      "priceMax": 4900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275862,
+      "title": "MesoWharton P199",
+      "categoryId": 13275856,
+      "priceMin": 4900,
+      "priceMax": 4900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275860,
+      "title": "MesoEye C71",
+      "categoryId": 13275856,
+      "priceMin": 4500,
+      "priceMax": 4500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275861,
+      "title": "MesoSculpt C71",
+      "categoryId": 13275856,
+      "priceMin": 4500,
+      "priceMax": 4500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275864,
+      "title": "Novacutan Sbio, Ybio",
+      "categoryId": 13275856,
+      "priceMin": 4500,
+      "priceMax": 4500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275866,
+      "title": "Profahilo",
+      "categoryId": 13275856,
+      "priceMin": 8500,
+      "priceMax": 8500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13385804,
+      "title": "Neauvia hydro delux",
+      "categoryId": 13275856,
+      "priceMin": 5000,
+      "priceMax": 5000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13385811,
+      "title": "Plinest",
+      "categoryId": 13275856,
+      "priceMin": 7000,
+      "priceMax": 7000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13320070,
+      "title": "Мезотерапия головы (Dermaheal HL, Pluryal Hair)",
+      "categoryId": 13249484,
+      "priceMin": 900,
+      "priceMax": 900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13320071,
+      "title": "Мезотерапия головы (Melsmon, Curasen)",
+      "categoryId": 13249484,
+      "priceMin": 1300,
+      "priceMax": 1300,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13320074,
+      "title": "Мезотерапия лица (Vitamin C)",
+      "categoryId": 13249484,
+      "priceMin": 800,
+      "priceMax": 800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13320075,
+      "title": "Мезотерапия лица (Транексамовая кислота)",
+      "categoryId": 13249484,
+      "priceMin": 1200,
+      "priceMax": 1200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13320072,
+      "title": "Мезотерапия лица (Pluryal Bright)",
+      "categoryId": 13249484,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13320073,
+      "title": "Мезотерапия лица (Pluryal Clear)",
+      "categoryId": 13249484,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13320068,
+      "title": "Липолитик (Dermaheal LL, Dr. Lipo, Light Fit, Super V Line))",
+      "categoryId": 13249484,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2849662,
+        2830441
+      ]
+    },
+    {
+      "id": 13320069,
+      "title": "Липолитик Light Fit",
+      "categoryId": 13249484,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2849662,
+        2830441
+      ]
+    },
+    {
+      "id": 13320077,
+      "title": "Экзосомы (Hannael) 5 мл",
+      "categoryId": 13249484,
+      "priceMin": 3500,
+      "priceMax": 3500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275916,
+      "title": "Melsmon (2.0 ml.)",
+      "categoryId": 13275874,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275914,
+      "title": "Curasen (2.0 ml.)",
+      "categoryId": 13275874,
+      "priceMin": 2000,
+      "priceMax": 2000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275915,
+      "title": "Laennec (2.0 ml.)",
+      "categoryId": 13275874,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275842,
+      "title": "Сферогель Light",
+      "categoryId": 13249481,
+      "priceMin": 5000,
+      "priceMax": 5000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275844,
+      "title": "Сферогель Medium",
+      "categoryId": 13249481,
+      "priceMin": 6000,
+      "priceMax": 6000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275843,
+      "title": "Сферогель Long",
+      "categoryId": 13249481,
+      "priceMin": 8000,
+      "priceMax": 8000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275841,
+      "title": "Коллагеназа",
+      "categoryId": 13249481,
+      "priceMin": 1900,
+      "priceMax": 1900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13615534,
+      "title": "Collost micro",
+      "categoryId": 13249481,
+      "priceMin": 7000,
+      "priceMax": 7000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275838,
+      "title": "Radiess 1.5 ml",
+      "categoryId": 13249480,
+      "priceMin": 9000,
+      "priceMax": 9000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275839,
+      "title": "AestheFill",
+      "categoryId": 13249480,
+      "priceMin": 12000,
+      "priceMax": 12000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275890,
+      "title": "Laennec 4.0 ml",
+      "categoryId": 13275871,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275892,
+      "title": "Глутатион + Вит C 1200 мг",
+      "categoryId": 13275871,
+      "priceMin": 1200,
+      "priceMax": 1200,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275896,
+      "title": "Феринжект 2 ml",
+      "categoryId": 13275871,
+      "priceMin": 2000,
+      "priceMax": 2000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275897,
+      "title": "Феринжект 4 ml",
+      "categoryId": 13275871,
+      "priceMin": 2800,
+      "priceMax": 2800,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275898,
+      "title": "Феринжект 6 ml",
+      "categoryId": 13275871,
+      "priceMin": 3600,
+      "priceMax": 3600,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275887,
+      "title": "Ботокс зоны межбровье",
+      "categoryId": 13275870,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275886,
+      "title": "Ботулинотерапия зоны лба",
+      "categoryId": 13275870,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275881,
+      "title": "Ботулинотерапия области глаз",
+      "categoryId": 13275870,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275889,
+      "title": "Ботулинотерапия области шеи",
+      "categoryId": 13275870,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275882,
+      "title": "Ботулинотерапия зоны вокруг рта",
+      "categoryId": 13275870,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275878,
+      "title": "Ботокс Full Face",
+      "categoryId": 13275870,
+      "priceMin": 6000,
+      "priceMax": 6000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275880,
+      "title": "Ботулинотерапия гипергидроза",
+      "categoryId": 13275870,
+      "priceMin": 5000,
+      "priceMax": 5000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275879,
+      "title": "Ботулинокоррекция бруксизма (массетеры)",
+      "categoryId": 13275870,
+      "priceMin": 3500,
+      "priceMax": 3500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275900,
+      "title": "Контурная пластика: (губы/скулы/подбородок/носогубные складки) - за 1 ml.)",
+      "categoryId": 13275872,
+      "priceMin": 3500,
+      "priceMax": 3500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275901,
+      "title": "Juvederm (1 ml.)",
+      "categoryId": 13275872,
+      "priceMin": 7500,
+      "priceMax": 0,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275902,
+      "title": "Novacutan Fbio / Stylage / Restylane (1 ml.)",
+      "categoryId": 13275872,
+      "priceMin": 4900,
+      "priceMax": 4900,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275904,
+      "title": "Нос",
+      "categoryId": 13275872,
+      "priceMin": 5500,
+      "priceMax": 5500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275903,
+      "title": "Выведение филлера (гиалуронидаза)",
+      "categoryId": 13275872,
+      "priceMin": 1500,
+      "priceMax": 1500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275905,
+      "title": "Коррекция носослезной борозды",
+      "categoryId": 13275872,
+      "priceMin": 5500,
+      "priceMax": 5500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13275930,
+      "title": "Нити COG PLLA (1 зона)",
+      "categoryId": 13275925,
+      "priceMin": 4000,
+      "priceMax": 4000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275931,
+      "title": "Нити COG PLLA (Лицо)",
+      "categoryId": 13275925,
+      "priceMin": 12000,
+      "priceMax": 12000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13275928,
+      "title": "Мезонити (1 зона)",
+      "categoryId": 13275925,
+      "priceMin": 4000,
+      "priceMax": 4000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13299264,
+      "title": "Чистка лица Holy Land",
+      "categoryId": 13249446,
+      "priceMin": 2500,
+      "priceMax": 2500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13299411,
+      "title": "Пилинг BioRePeel Cl3",
+      "categoryId": 13249446,
+      "priceMin": 2000,
+      "priceMax": 2000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13299413,
+      "title": "Пилинг PRX T33",
+      "categoryId": 13249446,
+      "priceMin": 2000,
+      "priceMax": 2000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13556741,
+      "title": "Уход DMK \"Мать невесты\"",
+      "categoryId": 13249446,
+      "priceMin": 3000,
+      "priceMax": 3000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13352376,
+      "title": "Пилинг FOTOSHOP",
+      "categoryId": 13249446,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13299408,
+      "title": "Карбокситерапия",
+      "categoryId": 13249446,
+      "priceMin": 700,
+      "priceMax": 700,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13323825,
+      "title": "Микроигольчатый (зона вокруг глаз)",
+      "categoryId": 13323823,
+      "priceMin": 3000,
+      "priceMax": 3000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13323826,
+      "title": "Микроигольчатый (лицо)",
+      "categoryId": 13323823,
+      "priceMin": 5000,
+      "priceMax": 5000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13323827,
+      "title": "Микроигольчатый (лицо+шея+декольте+глаза)",
+      "categoryId": 13323823,
+      "priceMin": 7000,
+      "priceMax": 7000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13323830,
+      "title": "Микроигольчатый (живот)",
+      "categoryId": 13323823,
+      "priceMin": 5000,
+      "priceMax": 5000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13323831,
+      "title": "Микроигольчатый (колени)",
+      "categoryId": 13323823,
+      "priceMin": 4000,
+      "priceMax": 4000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13323833,
+      "title": "Мультиполярный (лицо/ колени/ кисти рук)",
+      "categoryId": 13323823,
+      "priceMin": 2000,
+      "priceMax": 2000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13323834,
+      "title": "Мультиполярный (живот/руки трицепсы/внутренняя часть бедер/лицо-шея-декольте)",
+      "categoryId": 13323823,
+      "priceMin": 3000,
+      "priceMax": 3000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13361498,
+      "title": "Консультация+удаление / 1 единица",
+      "categoryId": 13361493,
+      "priceMin": 500,
+      "priceMax": 500,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13361499,
+      "title": "Консультация+удаление / до 10 единиц",
+      "categoryId": 13361493,
+      "priceMin": 1000,
+      "priceMax": 1000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13361500,
+      "title": "Консультация+удаление / свыше 10 единиц",
+      "categoryId": 13361493,
+      "priceMin": 1000,
+      "priceMax": 5000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": [
+        2830441
+      ]
+    },
+    {
+      "id": 13440641,
+      "title": "1 пробирка",
+      "categoryId": 13440628,
+      "priceMin": 2000,
+      "priceMax": 2000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13440643,
+      "title": "2 пробирки",
+      "categoryId": 13440628,
+      "priceMin": 4000,
+      "priceMax": 4000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    },
+    {
+      "id": 13440646,
+      "title": "3 пробирки",
+      "categoryId": 13440628,
+      "priceMin": 5000,
+      "priceMax": 5000,
+      "priceUnit": "thousand-vnd",
+      "durationSeconds": null,
+      "specialistIds": []
+    }
+  ],
+  "specialists": [
+    {
+      "id": 2849662,
+      "name": "Веста Шатилова",
+      "specialization": "Специалист по лазерной эпиляции",
+      "position": "Специалист по лазерной эпиляции",
+      "avatar": "https://assets.alteg.io/masters/sm/b/bb/bb639e634bcbf5c_20250615130656.png",
+      "bookable": true,
+      "serviceIds": [
+        13320068,
+        13320069
+      ]
+    },
+    {
+      "id": 2830441,
+      "name": "Станислав Шатилов",
+      "specialization": "Косметолог",
+      "position": "Врач косметолог",
+      "avatar": "https://assets.alteg.io/masters/sm/4/40/40bd6d2becc1eff_20250405195945.png",
+      "bookable": true,
+      "serviceIds": [
+        13275854,
+        13275859,
+        13275858,
+        13275865,
+        13275863,
+        13275862,
+        13275860,
+        13275861,
+        13275864,
+        13275866,
+        13385804,
+        13385811,
+        13320070,
+        13320071,
+        13320074,
+        13320075,
+        13320072,
+        13320073,
+        13320068,
+        13320069,
+        13320077,
+        13275916,
+        13275914,
+        13275915,
+        13275842,
+        13275844,
+        13275843,
+        13275841,
+        13615534,
+        13275838,
+        13275839,
+        13275890,
+        13275892,
+        13275896,
+        13275897,
+        13275898,
+        13275887,
+        13275886,
+        13275881,
+        13275889,
+        13275882,
+        13275878,
+        13275880,
+        13275879,
+        13275900,
+        13275901,
+        13275902,
+        13275904,
+        13275903,
+        13275905,
+        13299411,
+        13299413,
+        13556741,
+        13299408,
+        13323825,
+        13323826,
+        13323827,
+        13323830,
+        13323831,
+        13323833,
+        13323834,
+        13361498,
+        13361499,
+        13361500
+      ]
+    }
+  ],
+  "stats": {
+    "categories": 14,
+    "services": 74,
+    "specialists": 2,
+    "mappedServices": 64,
+    "unmappedServices": 10
+  }
+}
