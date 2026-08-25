@@ -21,10 +21,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Download last validated EVO network snapshot
+      - name: Download latest validated EVO network snapshot
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh run download 31729361133 -n evo-altegio-catalog -D artifacts/altegio
+        run: gh run download 32825009112 -n evo-altegio-catalog -D artifacts/altegio
       - name: Normalize cosmetology catalog
         run: node tools/normalize-altegio.mjs
       - name: Commit normalized snapshot
