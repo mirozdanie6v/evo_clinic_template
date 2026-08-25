@@ -14,4 +14,15 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
+      - name: Guard production structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e public/index.html
+          test ! -e app-data.js
+          test ! -d site
+          test ! -d static
+          grep -q 'from "../data/evo"' app/page.tsx
+          grep -q 'font-size:16px' app/globals.css
+          ! grep -Eiq 'caries|root-canal|veneer-crown|digital-smile|implantation|kids-caries' data/evo.ts
       - run: npm run build
