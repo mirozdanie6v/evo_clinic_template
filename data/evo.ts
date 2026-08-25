@@ -1,13 +1,17 @@
 import snapshot from "./altegio-snapshot.json";
+import { serviceTranslations } from "./service-translations";
 
 export type Lang = "ru" | "en" | "vi";
 export type Localized = Record<Lang,string>;
 export type Service = {id:string;altegioId:number;categoryId:string;name:Localized;description:Localized;price:Localized;duration:number|null;image:string;specialistIds:string[]};
 export type Category = {id:string;altegioId:number;name:Localized;note:Localized;image:string};
 export type Specialist = {id:string;name:Localized;role:Localized;bio:Localized;image:string;serviceIds:string[];demo:boolean;altegioId?:number;bookable?:boolean};
-export type Location = {id:string;name:string;address:string;phone:string;email:string;altegioCompanyId:number;bookingUrl:string;mapUrl:string};
+export type Location = {id:string;name:string;address:string;phone:string;email:string;altegioCompanyId:number;bookingUrl:string;mapUrl:string;telegramUrl:string};
 
 const MEDIA="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/111003/";
+export const brandLogoUrl=MEDIA+"2ae8cc03-27cf-4fc8-a187-507c0d31ea4b.webp";
+export const brandTelegramUrl="https://t.me/evo_vn";
+
 const categoryUi:Record<number,{name:Localized;note:Localized;image:string}>={
   13249482:{name:{ru:"Консультация косметолога",en:"Cosmetology consultation",vi:"Tư vấn thẩm mỹ"},note:{ru:"Оценка состояния кожи и подбор процедур",en:"Skin assessment and treatment planning",vi:"Đánh giá da và lựa chọn liệu trình"},image:MEDIA+"ffe7d30c-70f2-4ac5-ba21-39f11674f304.png"},
   13275856:{name:{ru:"Биоревитализация",en:"Biorevitalization",vi:"Biorevitalization"},note:{ru:"Увлажнение и улучшение качества кожи",en:"Hydration and skin-quality treatments",vi:"Cấp ẩm và cải thiện chất lượng da"},image:MEDIA+"ffe7d30c-70f2-4ac5-ba21-39f11674f304.png"},
@@ -33,12 +37,22 @@ const formatPrice=(min:number,max:number,lang:Lang):string=>{
   return money(min||max);
 };
 
+const specialistRole=(position?:string,specialization?:string):Localized=>{
+  const source=position||specialization||"Специалист EVO";
+  const value=`${position||""} ${specialization||""}`.toLowerCase();
+  if(value.includes("врач косметолог"))return {ru:source,en:"Cosmetologist physician",vi:"Bác sĩ thẩm mỹ"};
+  if(value.includes("косметолог"))return {ru:source,en:"Cosmetologist",vi:"Chuyên gia thẩm mỹ"};
+  if(value.includes("лазерной эпиляции"))return {ru:source,en:"Laser hair removal specialist",vi:"Chuyên gia triệt lông laser"};
+  return {ru:source,en:"EVO specialist",vi:"Chuyên gia EVO"};
+};
+
 export const catalogMeta={...snapshot.meta,snapshotStats:snapshot.stats};
 export const locations:Location[]=[{
   id:"north",name:snapshot.location.title,address:snapshot.location.address,phone:snapshot.location.phone,
   email:snapshot.location.email||"evo.beauty.space@gmail.com",altegioCompanyId:snapshot.location.id,
   bookingUrl:`https://n1324284.alteg.io/company/${snapshot.location.id}/personal/menu?o=`,
-  mapUrl:`https://www.google.com/maps/search/?api=1&query=${snapshot.location.lat},${snapshot.location.lon}`
+  mapUrl:`https://www.google.com/maps/search/?api=1&query=${snapshot.location.lat},${snapshot.location.lon}`,
+  telegramUrl:brandTelegramUrl
 }];
 
 export const categories:Category[]=snapshot.categories.map(raw=>{
@@ -50,7 +64,8 @@ const snapshotSpecialistIds=new Set(snapshot.specialists.map(item=>item.id));
 const fallbackSpecialistId="evo-online-team";
 export const services:Service[]=snapshot.services.map(raw=>{
   const category=categoryUi[raw.categoryId];
-  const official:Localized={ru:raw.title,en:raw.title,vi:raw.title};
+  const translated=serviceTranslations[raw.id];
+  const official:Localized={ru:raw.title,en:translated?.en||raw.title,vi:translated?.vi||raw.title};
   const mapped=raw.specialistIds.filter(id=>snapshotSpecialistIds.has(id)).map(id=>`altegio-staff-${id}`);
   return {
     id:`altegio-${raw.id}`,altegioId:raw.id,categoryId:`altegio-${raw.categoryId}`,name:official,
@@ -63,14 +78,14 @@ export const services:Service[]=snapshot.services.map(raw=>{
 
 export const specialists:Specialist[]=[...snapshot.specialists.map(raw=>({
   id:`altegio-staff-${raw.id}`,altegioId:raw.id,name:{ru:raw.name,en:raw.name,vi:raw.name},
-  role:{ru:raw.position||raw.specialization||"Специалист EVO",en:raw.specialization||raw.position||"EVO specialist",vi:raw.specialization||raw.position||"Chuyên gia EVO"},
+  role:specialistRole(raw.position,raw.specialization),
   bio:{ru:"Профиль и перечень процедур получены из публичного каталога Altegio EVO NORTH.",en:"Profile and treatment links are sourced from the public EVO NORTH Altegio catalog.",vi:"Hồ sơ và danh sách dịch vụ được lấy từ danh mục Altegio công khai của EVO NORTH."},
   image:raw.avatar||MEDIA+"ffe7d30c-70f2-4ac5-ba21-39f11674f304.png",serviceIds:raw.serviceIds.map(id=>`altegio-${id}`),demo:false,bookable:raw.bookable
 })),{
   id:fallbackSpecialistId,name:{ru:"Специалист EVO — выбор при записи",en:"EVO specialist — select when booking",vi:"Chuyên gia EVO — chọn khi đặt lịch"},
   role:{ru:"Официальная онлайн-запись",en:"Official online booking",vi:"Đặt lịch trực tuyến chính thức"},
   bio:{ru:"Для части процедур snapshot Altegio не вернул прямую связь со специалистом. Доступный специалист выбирается в официальной форме EVO.",en:"For some treatments the Altegio snapshot did not return a direct staff mapping. Choose an available specialist in EVO's official booking form.",vi:"Với một số dịch vụ, snapshot Altegio chưa trả về liên kết trực tiếp với chuyên gia. Hãy chọn chuyên gia khả dụng trong biểu mẫu đặt lịch chính thức của EVO."},
-  image:MEDIA+"ffe7d30c-70f2-4ac5-ba21-39f11674f304.png",serviceIds:services.filter(service=>service.specialistIds.includes(fallbackSpecialistId)).map(service=>service.id),demo:true,bookable:true
+  image:brandLogoUrl,serviceIds:services.filter(service=>service.specialistIds.includes(fallbackSpecialistId)).map(service=>service.id),demo:true,bookable:true
 }];
 
 export const getCategory=(id:string)=>categories.find(item=>item.id===id);
