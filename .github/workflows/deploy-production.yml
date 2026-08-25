@@ -24,7 +24,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      - name: Verify EVO production content CSS and JS
+      - name: Verify full EVO production content CSS and JS
         shell: bash
         run: |
           set -euo pipefail
@@ -40,20 +40,25 @@ jobs:
           grep -q '2ae8cc03-27cf-4fc8-a187-507c0d31ea4b' home.html || { echo 'Official EVO logo reference missing'; exit 3; }
           grep -q '@evo_vn' home.html || { echo 'Official EVO Telegram missing'; exit 4; }
           grep -q 'company/1258225/personal/menu' home.html || { echo 'Official EVO Altegio booking link missing'; exit 5; }
-          ! grep -q 'href="styles.css"' home.html || { echo 'Legacy static HTML is being served'; exit 6; }
-          test -s css.paths || { echo 'No Next.js CSS references'; exit 7; }
-          test -s js.paths || { echo 'No Next.js JS references'; exit 8; }
+          grep -q 'Волосы и барбер' home.html || { echo 'Full EVO hair direction missing from production'; exit 6; }
+          grep -q 'Ногти и подология' home.html || { echo 'Full EVO nails/podology direction missing from production'; exit 7; }
+          grep -q 'Тату и эстетика тела' home.html || { echo 'Full EVO tattoo direction missing from production'; exit 8; }
+          grep -q '257' home.html || { echo 'Full 257-service catalog marker missing from production'; exit 9; }
+          ! grep -q 'href="styles.css"' home.html || { echo 'Legacy static HTML is being served'; exit 10; }
+          test -s css.paths || { echo 'No Next.js CSS references'; exit 11; }
+          test -s js.paths || { echo 'No Next.js JS references'; exit 12; }
           : > css.all
           while IFS= read -r path; do
             curl -fsS -L -D css.headers -o css.part "$BASE$path"
-            grep -qi '^content-type: text/css' css.headers || { echo "Invalid CSS content-type: $path"; cat css.headers; exit 9; }
+            grep -qi '^content-type: text/css' css.headers || { echo "Invalid CSS content-type: $path"; cat css.headers; exit 13; }
             cat css.part >> css.all
           done < css.paths
-          test -s css.all || { echo 'Production CSS body is empty'; exit 10; }
-          grep -q ':root' css.all || { echo 'Expected global CSS not found'; exit 11; }
-          grep -q 'catalogSearch' css.all || { echo 'Expected P1 catalog styles not found'; exit 12; }
+          test -s css.all || { echo 'Production CSS body is empty'; exit 14; }
+          grep -q ':root' css.all || { echo 'Expected global CSS not found'; exit 15; }
+          grep -q 'catalogSearch' css.all || { echo 'Expected catalog styles not found'; exit 16; }
+          grep -q 'bookingGroups' css.all || { echo 'Expected full-catalog booking group styles not found'; exit 17; }
           JS_PATH=$(head -n1 js.paths)
           curl -fsS -L -D js.headers -o js.body "$BASE$JS_PATH"
-          grep -Eqi '^content-type: (application|text)/(javascript|x-javascript)' js.headers || { echo 'Production JS has invalid content-type'; cat js.headers; exit 13; }
-          test -s js.body || { echo 'Production JS body is empty'; exit 14; }
-          echo "Production verified with $(wc -l < css.paths) CSS chunks and official EVO content"
+          grep -Eqi '^content-type: (application|text)/(javascript|x-javascript)' js.headers || { echo 'Production JS has invalid content-type'; cat js.headers; exit 18; }
+          test -s js.body || { echo 'Production JS body is empty'; exit 19; }
+          echo "Full EVO production verified with $(wc -l < css.paths) CSS chunks"
