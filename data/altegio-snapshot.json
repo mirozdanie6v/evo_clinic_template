@@ -1,8 +1,8 @@
 {
   "meta": {
     "source": "Altegio public booking catalog",
-    "extractedAt": "2026-08-13T18:12:41.838Z",
-    "normalizedAt": "2026-08-25T08:24:13.348Z",
+    "extractedAt": "2026-08-25T08:16:11.286Z",
+    "normalizedAt": "2026-08-25T08:27:11.148Z",
     "sourceLocationId": 251848,
     "priceUnit": "thousand-vnd"
   },
@@ -148,8 +148,8 @@
       "id": 13275863,
       "title": "MesoXantin F199",
       "categoryId": 13275856,
-      "priceMin": 4900,
-      "priceMax": 4900,
+      "priceMin": 5900,
+      "priceMax": 5900,
       "priceUnit": "thousand-vnd",
       "durationSeconds": null,
       "specialistIds": [
@@ -160,8 +160,8 @@
       "id": 13275862,
       "title": "MesoWharton P199",
       "categoryId": 13275856,
-      "priceMin": 4900,
-      "priceMax": 4900,
+      "priceMin": 5900,
+      "priceMax": 5900,
       "priceUnit": "thousand-vnd",
       "durationSeconds": null,
       "specialistIds": [
