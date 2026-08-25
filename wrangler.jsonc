@@ -1,9 +1,9 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "evo-clinic-template",
-  "account_id": "3972de85ae8b3d2ee3e0d35ecf7ca358",
-  "compatibility_date": "2026-08-13",
-  "assets": {
-    "directory": "./static"
-  }
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "evo-beauty-miniapp",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-08-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {"directory": ".open-next/assets", "binding": "ASSETS"},
+  "observability": {"enabled": true}
 }

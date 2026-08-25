@@ -1,11 +1,13 @@
 {
-  "name": "evo-clinic-template",
-  "version": "0.1.0",
+  "name": "evo-beauty-miniapp",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "next": "latest",
@@ -13,9 +15,11 @@
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "typescript": "^6.0.3"
+    "typescript": "latest",
+    "wrangler": "latest"
   }
 }
