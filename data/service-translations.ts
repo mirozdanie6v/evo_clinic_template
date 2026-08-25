@@ -1,6 +1,4 @@
-import type { Localized } from "./evo";
-
-type ServiceTranslation = Pick<Localized,"en"|"vi">;
+type ServiceTranslation = {en:string;vi:string};
 
 export const serviceTranslations: Record<number,ServiceTranslation> = {
   13275854:{en:"Consultation + treatment plan",vi:"Tư vấn + phác đồ điều trị"},
