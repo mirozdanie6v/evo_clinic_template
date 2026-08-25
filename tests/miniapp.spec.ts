@@ -14,6 +14,7 @@ test("home is mobile-safe and exposes official EVO contacts", async ({page})=>{
   const errors=await openRu(page);
   await expect(page.locator(".brandLogo")).toHaveAttribute("src",/2ae8cc03-27cf-4fc8-a187-507c0d31ea4b/);
   await expect(page.getByRole("link",{name:/@evo_vn/})).toBeVisible();
+  await expect(page.getByRole("link",{name:"Altegio"})).toHaveAttribute("href",/company\/1258225\/personal\/menu/);
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
   expect(overflow).toBeLessThanOrEqual(1);
   expect(errors).toEqual([]);
@@ -45,7 +46,7 @@ test("demo booking survives through profile", async ({page})=>{
   await page.getByRole("button",{name:"Продолжить"}).click();
   await page.getByRole("button",{name:"Создать демо-запись"}).click();
   await expect(page.getByText("Демо-запись создана",{exact:true})).toBeVisible();
-  await page.getByRole("button",{name:"Профиль",exact:true}).click();
+  await page.locator(".successCard").getByRole("button",{name:"Профиль",exact:true}).click();
   await expect(page.getByText("Hyaron",{exact:true})).toBeVisible();
   await expect(page.getByText("EVO Test",{exact:true})).toBeVisible();
   expect(errors).toEqual([]);
