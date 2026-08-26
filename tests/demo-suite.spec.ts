@@ -8,7 +8,8 @@ test('EVO demo AI preset question leads to recommendations and booking',async({p
  await page.getByTestId('ai-question-hair-color').click();
  await expect(page.getByTestId('ai-recommendations')).toBeVisible();
  await page.locator('[data-testid^="ai-book-"]').first().click();
- await expect(page.getByText(/Выберите услугу|Choose a service|Chọn dịch vụ/)).toBeVisible();
+ await expect(page.getByText('EVO BOOKING')).toBeVisible();
+ await expect(page.getByText(/Выберите специалиста|Choose a specialist|Chọn chuyên gia|Выберите дату|Choose a date|Chọn ngày/).first()).toBeVisible();
  expect(errors).toEqual([]);
 });
 
@@ -35,12 +36,13 @@ test('EVO demo admin supports local status, client card and broadcast',async({pa
 });
 
 test('demo AI and admin remain localized in VI and mobile-safe',async({page})=>{
- await page.goto('/');await page.getByRole('button',{name:'VI'}).click();
+ await page.goto('/');
+ await page.getByTestId('topbar').getByRole('button',{name:'VI',exact:true}).click();
  await page.getByRole('button',{name:/Tư vấn/}).last().click();
  await expect(page.getByTestId('demo-ai')).toContainText('KHÔNG CÓ AI THẬT');
  await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1)).toBeTruthy();
  await page.getByRole('button',{name:/Hồ sơ/}).click();
- await page.getByRole('button',{name:/Quản trị demo/i}).click();
+ await page.locator('button.linkRow').last().click();
  await expect(page.getByTestId('demo-admin')).toContainText('Không gửi gì');
  await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1)).toBeTruthy();
 });
