@@ -3,7 +3,7 @@ import {expect,test} from '@playwright/test';
 test('EVO demo AI preset question leads to recommendations and booking',async({page})=>{
  const errors:string[]=[];page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');
- await page.getByRole('button',{name:/AI|ИИ|Tư vấn/i}).last().click();
+ await page.locator('nav.bottomNav button').nth(3).click();
  await expect(page.getByTestId('demo-ai')).toBeVisible();
  await page.getByTestId('ai-question-hair-color').click();
  await expect(page.getByTestId('ai-recommendations')).toBeVisible();
@@ -16,8 +16,8 @@ test('EVO demo AI preset question leads to recommendations and booking',async({p
 test('EVO demo admin supports local status, client card and broadcast',async({page})=>{
  const errors:string[]=[];page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');
- await page.getByRole('button',{name:/Профиль|Profile|Hồ sơ/}).click();
- await page.getByRole('button',{name:/Demo Admin|Демо-админ|Quản trị demo/i}).click();
+ await page.locator('nav.bottomNav button').nth(4).click();
+ await page.getByRole('button',{name:/Demo Admin|Демо-админ/i}).click();
  await expect(page.getByTestId('demo-admin')).toBeVisible();
  await page.getByTestId('admin-tab-appointments').click();
  const first=page.getByTestId('admin-appointments').locator('article').first();
@@ -38,10 +38,10 @@ test('EVO demo admin supports local status, client card and broadcast',async({pa
 test('demo AI and admin remain localized in VI and mobile-safe',async({page})=>{
  await page.goto('/');
  await page.getByTestId('topbar').getByRole('button',{name:'VI',exact:true}).click();
- await page.getByRole('button',{name:/Tư vấn/}).last().click();
+ await page.locator('nav.bottomNav button').nth(3).click();
  await expect(page.getByTestId('demo-ai')).toContainText('KHÔNG CÓ AI THẬT');
  await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1)).toBeTruthy();
- await page.getByRole('button',{name:/Hồ sơ/}).click();
+ await page.locator('nav.bottomNav button').nth(4).click();
  await page.locator('button.linkRow').last().click();
  await expect(page.getByTestId('demo-admin')).toContainText('Không gửi gì');
  await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1)).toBeTruthy();
