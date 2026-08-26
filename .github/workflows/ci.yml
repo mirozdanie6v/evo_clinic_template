@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
-      - name: Guard production structure and full EVO catalog
+      - name: Guard production structure, full EVO catalog and demo-only suite
         shell: bash
         run: |
           set -euo pipefail
@@ -40,6 +40,14 @@ jobs:
           grep -q '"brows-pmu"' data/evo.ts
           grep -q '"tattoo-body"' data/evo.ts
           grep -q '"cosmetology"' data/evo.ts
+          test -f app/demo-ai-consultant.tsx
+          test -f app/demo-admin.tsx
+          test -f data/demo-ai-scenarios.ts
+          grep -q 'DemoAiConsultant' app/page.tsx
+          grep -q 'DemoAdmin' app/page.tsx
+          grep -q 'NO REAL AI' app/demo-ai-consultant.tsx
+          grep -q 'DEMO ADMIN' app/demo-admin.tsx
+          ! grep -Eq 'fetch\(|/api/' app/demo-ai-consultant.tsx app/demo-admin.tsx data/demo-ai-scenarios.ts
           ! grep -Eiq 'caries|root-canal|veneer-crown|digital-smile|implantation|kids-caries' data/evo.ts
           node <<'NODE'
           const x=require('./data/altegio-snapshot.json');
@@ -54,7 +62,7 @@ jobs:
           for(const name of required) if(!names.has(name)) throw new Error(`Missing EVO direction: ${name}`);
           const serviceTitles=new Set(x.services.map(s=>s.title));
           if(![...serviceTitles].some(x=>x.includes('Художественная татуировка'))) throw new Error('Art tattoo service missing');
-          console.log('Full EVO catalog guard OK',x.stats);
+          console.log('Full EVO catalog + demo suite guard OK',x.stats);
           NODE
       - run: npm run build
       - name: Local runtime smoke

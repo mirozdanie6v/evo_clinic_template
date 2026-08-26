@@ -24,7 +24,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      - name: Verify full EVO production content CSS and JS
+      - name: Verify full EVO production content CSS JS and demo suite
         shell: bash
         run: |
           set -euo pipefail
@@ -57,8 +57,14 @@ jobs:
           grep -q ':root' css.all || { echo 'Expected global CSS not found'; exit 15; }
           grep -q 'catalogSearch' css.all || { echo 'Expected catalog styles not found'; exit 16; }
           grep -q 'bookingGroups' css.all || { echo 'Expected full-catalog booking group styles not found'; exit 17; }
-          JS_PATH=$(head -n1 js.paths)
-          curl -fsS -L -D js.headers -o js.body "$BASE$JS_PATH"
-          grep -Eqi '^content-type: (application|text)/(javascript|x-javascript)' js.headers || { echo 'Production JS has invalid content-type'; cat js.headers; exit 18; }
-          test -s js.body || { echo 'Production JS body is empty'; exit 19; }
-          echo "Full EVO production verified with $(wc -l < css.paths) CSS chunks"
+          : > js.all
+          while IFS= read -r path; do
+            curl -fsS -L -D js.headers -o js.part "$BASE$path"
+            grep -Eqi '^content-type: (application|text)/(javascript|x-javascript)' js.headers || { echo "Production JS has invalid content-type: $path"; cat js.headers; exit 18; }
+            cat js.part >> js.all
+          done < js.paths
+          test -s js.all || { echo 'Production JS body is empty'; exit 19; }
+          grep -q 'DEMO ADMIN' js.all || { echo 'Demo Admin marker missing from production JS'; exit 20; }
+          grep -q 'NO REAL AI' js.all || { echo 'Demo AI no-integration marker missing from production JS'; exit 21; }
+          grep -q 'CAMPAIGN BUILDER' js.all || { echo 'Demo broadcast builder missing from production JS'; exit 22; }
+          echo "Full EVO + Demo Suite production verified with $(wc -l < css.paths) CSS and $(wc -l < js.paths) JS chunks"
