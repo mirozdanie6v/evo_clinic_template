@@ -10,154 +10,54 @@ export type Specialist = {id:string;name:Localized;role:Localized;bio:Localized;
 export type Location = {id:string;name:string;address:string;phone:string;email:string;altegioCompanyId:number;bookingUrl:string;mapUrl:string;telegramUrl:string};
 
 const MEDIA="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/111003/";
+const IMAGES="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/images/111003/";
 export const brandLogoUrl=MEDIA+"2ae8cc03-27cf-4fc8-a187-507c0d31ea4b.webp";
 export const brandTelegramUrl="https://t.me/evo_vn";
 const OFFICIAL_BOOKING_COMPANY_ID=1258225;
 
+// Real EVO images are sourced from evo.pro.vn service pages.
 const groupUi:Record<string,{name:Localized;note:Localized;image:string}>={
-  "hair":{name:{ru:"Волосы и барбер",en:"Hair & barber",vi:"Tóc & barber"},note:{ru:"Стрижки, укладки, окрашивание, уходы и барбер-сервис",en:"Cuts, styling, coloring, treatments and barber services",vi:"Cắt, tạo kiểu, nhuộm, chăm sóc tóc và barber"},image:MEDIA+"b6040595-5b9a-4de2-8676-b835b5fbf79c.jpg"},
-  "nails":{name:{ru:"Ногти и подология",en:"Nails & podology",vi:"Móng & podology"},note:{ru:"Маникюр, педикюр и профессиональная работа со стопами",en:"Manicure, pedicure and professional foot care",vi:"Manicure, pedicure và chăm sóc bàn chân chuyên sâu"},image:MEDIA+"d0719a5c-c5bf-40b4-a29d-47fd959e0bcd.png"},
-  "laser":{name:{ru:"Лазерная эпиляция",en:"Laser hair removal",vi:"Triệt lông laser"},note:{ru:"Женские и мужские зоны, комплексы и все тело",en:"Women’s and men’s zones, combos and full body",vi:"Vùng nữ/nam, combo và toàn thân"},image:MEDIA+"5550bb7b-ccf0-4686-8eb3-ee9ef80db99b.jpg"},
-  "brows-pmu":{name:{ru:"Брови, ресницы и PMU",en:"Brows, lashes & PMU",vi:"Chân mày, mi & PMU"},note:{ru:"Оформление, ламинирование, наращивание и перманентный макияж",en:"Shaping, lamination, extensions and permanent makeup",vi:"Tạo dáng, uốn, nối mi và phun xăm thẩm mỹ"},image:MEDIA+"4349a451-6388-4f69-8e82-83b1e70c1f9b.png"},
-  "tattoo-body":{name:{ru:"Тату и эстетика тела",en:"Tattoo & body aesthetics",vi:"Tattoo & thẩm mỹ cơ thể"},note:{ru:"Художественные тату, дермопигментация и лазерное удаление",en:"Art tattoos, dermopigmentation and laser removal",vi:"Tattoo nghệ thuật, dermopigmentation và xóa tattoo laser"},image:MEDIA+"93f4a6b9-eaa3-4854-b4fb-05f4ce8d3f54.png"},
-  "cosmetology":{name:{ru:"Косметология",en:"Cosmetology",vi:"Thẩm mỹ da"},note:{ru:"Инъекционные, аппаратные и уходовые процедуры",en:"Injectable, device-based and skin-care treatments",vi:"Liệu trình tiêm, công nghệ cao và chăm sóc da"},image:MEDIA+"ffe7d30c-70f2-4ac5-ba21-39f11674f304.png"},
-  "massage":{name:{ru:"Массаж",en:"Massage",vi:"Massage"},note:{ru:"Лечебные, спортивные, лимфодренажные и расслабляющие программы",en:"Therapeutic, sports, lymphatic and relaxing massage",vi:"Massage trị liệu, thể thao, dẫn lưu bạch huyết và thư giãn"},image:MEDIA+"eb71391b-8d70-47ec-b769-384fba5e42d3.png"},
-  "academy":{name:{ru:"Обучение",en:"Training",vi:"Đào tạo"},note:{ru:"Профессиональные программы EVO",en:"Professional EVO programs",vi:"Chương trình đào tạo chuyên nghiệp EVO"},image:MEDIA+"6d50a4c0-43fa-4bd8-9d52-af2e539e81f6.webp"}
+  hair:{name:{ru:"Волосы и барбер",en:"Hair & barber",vi:"Tóc & barber"},note:{ru:"Стрижки, укладки, окрашивание, уходы и барбер-сервис",en:"Cuts, styling, coloring, treatments and barber services",vi:"Cắt, tạo kiểu, nhuộm, chăm sóc tóc và barber"},image:MEDIA+"0710fa27-e2af-49d6-8501-595789726e7f.jpg"},
+  nails:{name:{ru:"Ногти и подология",en:"Nails & podology",vi:"Móng & podology"},note:{ru:"Маникюр, педикюр и профессиональная работа со стопами",en:"Manicure, pedicure and professional foot care",vi:"Manicure, pedicure và chăm sóc bàn chân chuyên sâu"},image:MEDIA+"46cc74d6-c203-45d0-97cb-8674b6a01fd2.png"},
+  laser:{name:{ru:"Лазерная эпиляция",en:"Laser hair removal",vi:"Triệt lông laser"},note:{ru:"Женские и мужские зоны, комплексы и все тело",en:"Women’s and men’s zones, combos and full body",vi:"Vùng nữ/nam, combo và toàn thân"},image:MEDIA+"08320db6-5a32-4ab8-9ea4-1966799d7195.webp"},
+  "brows-pmu":{name:{ru:"Брови, ресницы и PMU",en:"Brows, lashes & PMU",vi:"Chân mày, mi & PMU"},note:{ru:"Оформление, ламинирование, наращивание и перманентный макияж",en:"Shaping, lamination, extensions and permanent makeup",vi:"Tạo dáng, uốn, nối mi và phun xăm thẩm mỹ"},image:MEDIA+"87b94b49-6bad-4d5f-a69a-53e98ae88cb8.jpg"},
+  "tattoo-body":{name:{ru:"Тату и эстетика тела",en:"Tattoo & body aesthetics",vi:"Tattoo & thẩm mỹ cơ thể"},note:{ru:"Художественные тату, дермопигментация и лазерное удаление",en:"Art tattoos, dermopigmentation and laser removal",vi:"Tattoo nghệ thuật, dermopigmentation và xóa tattoo laser"},image:IMAGES+"b4ffc0c66d641588c49786a9701000ce.webp"},
+  cosmetology:{name:{ru:"Косметология",en:"Cosmetology",vi:"Thẩm mỹ da"},note:{ru:"Инъекционные, аппаратные и уходовые процедуры",en:"Injectable, device-based and skin-care treatments",vi:"Liệu trình tiêm, công nghệ cao và chăm sóc da"},image:MEDIA+"900a1132-4c94-4c49-b7a4-3ab4867da451.jpg"},
+  massage:{name:{ru:"Массаж",en:"Massage",vi:"Massage"},note:{ru:"Лечебные, спортивные, лимфодренажные и расслабляющие программы",en:"Therapeutic, sports, lymphatic and relaxing massage",vi:"Massage trị liệu, thể thao, dẫn lưu bạch huyết và thư giãn"},image:IMAGES+"2f0533a046da152a84da9c7944d5a2cd.jpeg"},
+  academy:{name:{ru:"Обучение",en:"Training",vi:"Đào tạo"},note:{ru:"Профессиональные программы EVO",en:"Professional EVO programs",vi:"Chương trình đào tạo chuyên nghiệp EVO"},image:MEDIA+"87b94b49-6bad-4d5f-a69a-53e98ae88cb8.jpg"}
 };
 
 const categoryNames:Partial<Record<number,Localized>>={
-  13293803:{ru:"Ресницы",en:"Lashes",vi:"Mi"},
-  10410331:{ru:"Наращивание ресниц",en:"Lash extensions",vi:"Nối mi"},
-  13249483:{ru:"Коррекция перманентного макияжа",en:"Permanent makeup correction",vi:"Chỉnh sửa PMU"},
-  13310361:{ru:"Брови",en:"Brows",vi:"Chân mày"},
-  13275873:{ru:"Перманентный макияж",en:"Permanent makeup",vi:"Phun xăm thẩm mỹ"},
-  13249479:{ru:"Женская эпиляция",en:"Women’s laser hair removal",vi:"Triệt lông laser nữ"},
-  13275875:{ru:"Эстетика тела",en:"Body aesthetics",vi:"Thẩm mỹ cơ thể"},
-  13249485:{ru:"Мужская эпиляция",en:"Men’s laser hair removal",vi:"Triệt lông laser nam"},
-  12262315:{ru:"Педикюр",en:"Pedicure",vi:"Pedicure"},
-  12262298:{ru:"Маникюр",en:"Manicure",vi:"Manicure"},
-  12262320:{ru:"Стрижки / Укладки",en:"Haircuts / Styling",vi:"Cắt / tạo kiểu tóc"},
-  12262322:{ru:"Уходы с укладкой",en:"Hair treatments & styling",vi:"Chăm sóc tóc & tạo kiểu"},
-  12262321:{ru:"Дополнительные уходы для волос",en:"Add-on hair treatments",vi:"Chăm sóc tóc bổ sung"},
-  12263464:{ru:"Окрашивание / Тонирование",en:"Hair coloring / Toning",vi:"Nhuộm / cân bằng màu tóc"},
-  12262316:{ru:"Сложное окрашивание",en:"Complex hair coloring",vi:"Nhuộm tóc kỹ thuật cao"},
-  12262318:{ru:"Сложное яркое окрашивание",en:"Creative bright coloring",vi:"Nhuộm màu sáng sáng tạo"},
-  12262317:{ru:"AirTouch / Shatush / Total Blond",en:"AirTouch / Shatush / Total Blond",vi:"AirTouch / Shatush / Total Blond"},
-  12263463:{ru:"Коррекция Total Blond",en:"Total Blond correction",vi:"Chỉnh Total Blond"},
-  12262319:{ru:"Снятие цвета",en:"Hair color removal",vi:"Tẩy màu tóc"},
-  12263465:{ru:"Total Blond для мужчин",en:"Total Blond for men",vi:"Total Blond nam"},
-  10411306:{ru:"Барбер",en:"Barber",vi:"Barber"},
-  13249482:{ru:"Консультация косметолога",en:"Cosmetology consultation",vi:"Tư vấn thẩm mỹ"},
-  13275856:{ru:"Биоревитализация",en:"Biorevitalization",vi:"Biorevitalization"},
-  13249484:{ru:"Мезотерапия",en:"Mesotherapy",vi:"Mesotherapy"},
-  10410407:{ru:"Мезотерапия — дополнительные препараты",en:"Mesotherapy — additional products",vi:"Mesotherapy — sản phẩm bổ sung"},
-  13275874:{ru:"Плацентарная терапия",en:"Placental therapy",vi:"Liệu pháp nhau thai"},
-  13249481:{ru:"Коллагенотерапия",en:"Collagen therapy",vi:"Liệu pháp collagen"},
-  13249480:{ru:"Коллагеностимуляция",en:"Collagen stimulation",vi:"Kích thích collagen"},
-  13275871:{ru:"Инфузионная терапия",en:"Infusion therapy",vi:"Liệu pháp truyền dịch"},
-  13275870:{ru:"Ботулинотерапия",en:"Botulinum therapy",vi:"Liệu pháp botulinum"},
-  13275872:{ru:"Контурная пластика",en:"Contour correction",vi:"Tạo đường nét"},
-  13275925:{ru:"Нитевой лифтинг",en:"Thread lifting",vi:"Căng chỉ"},
-  13249446:{ru:"Эстетические процедуры",en:"Aesthetic cosmetology",vi:"Thẩm mỹ da"},
-  10764912:{ru:"Обучение",en:"Training",vi:"Đào tạo"},
-  13073185:{ru:"Подология",en:"Podology",vi:"Podology"},
-  11568788:{ru:"Массаж",en:"Massage",vi:"Massage"},
-  12892505:{ru:"Удаление тату лазером",en:"Laser tattoo removal",vi:"Xóa tattoo bằng laser"},
-  13323823:{ru:"Микроигольчатый RF-лифтинг",en:"Microneedle RF lifting",vi:"RF vi kim"},
-  13361493:{ru:"Удаление новообразований",en:"Skin lesion removal",vi:"Loại bỏ tổn thương da"},
-  13440628:{ru:"Плазмотерапия",en:"Plasma therapy",vi:"Liệu pháp huyết tương"}
+  13293803:{ru:"Ресницы",en:"Lashes",vi:"Mi"},10410331:{ru:"Наращивание ресниц",en:"Lash extensions",vi:"Nối mi"},13249483:{ru:"Коррекция перманентного макияжа",en:"Permanent makeup correction",vi:"Chỉnh sửa PMU"},13310361:{ru:"Брови",en:"Brows",vi:"Chân mày"},13275873:{ru:"Перманентный макияж",en:"Permanent makeup",vi:"Phun xăm thẩm mỹ"},13249479:{ru:"Женская эпиляция",en:"Women’s laser hair removal",vi:"Triệt lông laser nữ"},13275875:{ru:"Эстетика тела",en:"Body aesthetics",vi:"Thẩm mỹ cơ thể"},13249485:{ru:"Мужская эпиляция",en:"Men’s laser hair removal",vi:"Triệt lông laser nam"},12262315:{ru:"Педикюр",en:"Pedicure",vi:"Pedicure"},12262298:{ru:"Маникюр",en:"Manicure",vi:"Manicure"},12262320:{ru:"Стрижки / Укладки",en:"Haircuts / Styling",vi:"Cắt / tạo kiểu tóc"},12262322:{ru:"Уходы с укладкой",en:"Hair treatments & styling",vi:"Chăm sóc tóc & tạo kiểu"},12262321:{ru:"Дополнительные уходы для волос",en:"Add-on hair treatments",vi:"Chăm sóc tóc bổ sung"},12263464:{ru:"Окрашивание / Тонирование",en:"Hair coloring / Toning",vi:"Nhuộm / cân bằng màu tóc"},12262316:{ru:"Сложное окрашивание",en:"Complex hair coloring",vi:"Nhuộm tóc kỹ thuật cao"},12262318:{ru:"Сложное яркое окрашивание",en:"Creative bright coloring",vi:"Nhuộm màu sáng sáng tạo"},12262317:{ru:"AirTouch / Shatush / Total Blond",en:"AirTouch / Shatush / Total Blond",vi:"AirTouch / Shatush / Total Blond"},12263463:{ru:"Коррекция Total Blond",en:"Total Blond correction",vi:"Chỉnh Total Blond"},12262319:{ru:"Снятие цвета",en:"Hair color removal",vi:"Tẩy màu tóc"},12263465:{ru:"Total Blond для мужчин",en:"Total Blond for men",vi:"Total Blond nam"},10411306:{ru:"Барбер",en:"Barber",vi:"Barber"},13249482:{ru:"Консультация косметолога",en:"Cosmetology consultation",vi:"Tư vấn thẩm mỹ"},13275856:{ru:"Биоревитализация",en:"Biorevitalization",vi:"Biorevitalization"},13249484:{ru:"Мезотерапия",en:"Mesotherapy",vi:"Mesotherapy"},10410407:{ru:"Мезотерапия — дополнительные препараты",en:"Mesotherapy — additional products",vi:"Mesotherapy — sản phẩm bổ sung"},13275874:{ru:"Плацентарная терапия",en:"Placental therapy",vi:"Liệu pháp nhau thai"},13249481:{ru:"Коллагенотерапия",en:"Collagen therapy",vi:"Liệu pháp collagen"},13249480:{ru:"Коллагеностимуляция",en:"Collagen stimulation",vi:"Kích thích collagen"},13275871:{ru:"Инфузионная терапия",en:"Infusion therapy",vi:"Liệu pháp truyền dịch"},13275870:{ru:"Ботулинотерапия",en:"Botulinum therapy",vi:"Liệu pháp botulinum"},13275872:{ru:"Контурная пластика",en:"Contour correction",vi:"Tạo đường nét"},13275925:{ru:"Нитевой лифтинг",en:"Thread lifting",vi:"Căng chỉ"},13249446:{ru:"Эстетические процедуры",en:"Aesthetic cosmetology",vi:"Thẩm mỹ da"},10764912:{ru:"Обучение",en:"Training",vi:"Đào tạo"},13073185:{ru:"Подология",en:"Podology",vi:"Podology"},11568788:{ru:"Массаж",en:"Massage",vi:"Massage"},12892505:{ru:"Удаление тату лазером",en:"Laser tattoo removal",vi:"Xóa tattoo bằng laser"},13323823:{ru:"Микроигольчатый RF-лифтинг",en:"Microneedle RF lifting",vi:"RF vi kim"},13361493:{ru:"Удаление новообразований",en:"Skin lesion removal",vi:"Loại bỏ tổn thương da"},13440628:{ru:"Плазмотерапия",en:"Plasma therapy",vi:"Liệu pháp huyết tương"}
 };
 
 const categoryGroup:Record<number,string>={
-  13293803:"brows-pmu",10410331:"brows-pmu",13249483:"brows-pmu",13310361:"brows-pmu",13275873:"brows-pmu",
-  13249479:"laser",13249485:"laser",
-  13275875:"tattoo-body",12892505:"tattoo-body",
-  12262315:"nails",12262298:"nails",13073185:"nails",
-  12262320:"hair",12262322:"hair",12262321:"hair",12263464:"hair",12262316:"hair",12262318:"hair",12262317:"hair",12263463:"hair",12262319:"hair",12263465:"hair",10411306:"hair",
-  13249482:"cosmetology",13275856:"cosmetology",13249484:"cosmetology",10410407:"cosmetology",13275874:"cosmetology",13249481:"cosmetology",13249480:"cosmetology",13275871:"cosmetology",13275870:"cosmetology",13275872:"cosmetology",13275925:"cosmetology",13249446:"cosmetology",13323823:"cosmetology",13361493:"cosmetology",13440628:"cosmetology",
-  11568788:"massage",10764912:"academy"
+  13293803:"brows-pmu",10410331:"brows-pmu",13249483:"brows-pmu",13310361:"brows-pmu",13275873:"brows-pmu",13249479:"laser",13249485:"laser",13275875:"tattoo-body",12892505:"tattoo-body",12262315:"nails",12262298:"nails",13073185:"nails",12262320:"hair",12262322:"hair",12262321:"hair",12263464:"hair",12262316:"hair",12262318:"hair",12262317:"hair",12263463:"hair",12262319:"hair",12263465:"hair",10411306:"hair",13249482:"cosmetology",13275856:"cosmetology",13249484:"cosmetology",10410407:"cosmetology",13275874:"cosmetology",13249481:"cosmetology",13249480:"cosmetology",13275871:"cosmetology",13275870:"cosmetology",13275872:"cosmetology",13275925:"cosmetology",13249446:"cosmetology",13323823:"cosmetology",13361493:"cosmetology",13440628:"cosmetology",11568788:"massage",10764912:"academy"
+};
+
+const categoryImages:Partial<Record<number,string>>={
+  12262320:MEDIA+"5e8791be-8a3e-4fb3-ae88-34161325ee1b.jpg",12262322:MEDIA+"bfb513d6-2cfb-4c03-a6ce-6d6908918370.jpg",12262321:MEDIA+"579dd82b-e0b2-4482-978f-d590d9d860dd.jpg",12263464:MEDIA+"400a10dd-c854-4a55-978c-6653195c95d4.jpg",12262316:MEDIA+"400a10dd-c854-4a55-978c-6653195c95d4.jpg",12262318:MEDIA+"42d9d60f-9ec9-4089-aaf5-53e3311f2153.jpg",12262317:MEDIA+"42d9d60f-9ec9-4089-aaf5-53e3311f2153.jpg",12263463:MEDIA+"42d9d60f-9ec9-4089-aaf5-53e3311f2153.jpg",12262319:MEDIA+"400a10dd-c854-4a55-978c-6653195c95d4.jpg",12263465:MEDIA+"58887f8a-7105-4af1-b240-187be32a6817.jpg",10411306:MEDIA+"58887f8a-7105-4af1-b240-187be32a6817.jpg",
+  12262298:MEDIA+"46cc74d6-c203-45d0-97cb-8674b6a01fd2.png",12262315:MEDIA+"5d001610-12b8-4de8-af8e-ac4955e43457.png",13073185:MEDIA+"ca7dfa68-342e-4dbe-89df-7f1566dbaea3.jpg",
+  13249479:MEDIA+"08320db6-5a32-4ab8-9ea4-1966799d7195.webp",13249485:MEDIA+"08320db6-5a32-4ab8-9ea4-1966799d7195.webp",
+  13293803:MEDIA+"ca424a11-9427-41ed-ad89-9704aa16397c.jpg",10410331:MEDIA+"ca424a11-9427-41ed-ad89-9704aa16397c.jpg",13310361:MEDIA+"ca424a11-9427-41ed-ad89-9704aa16397c.jpg",13249483:MEDIA+"87b94b49-6bad-4d5f-a69a-53e98ae88cb8.jpg",13275873:MEDIA+"87b94b49-6bad-4d5f-a69a-53e98ae88cb8.jpg",
+  13275875:IMAGES+"b4ffc0c66d641588c49786a9701000ce.webp",12892505:MEDIA+"fd2fb024-6124-4abe-856b-4399a2ae0dcd.jpg",
+  13249482:MEDIA+"900a1132-4c94-4c49-b7a4-3ab4867da451.jpg",13275856:MEDIA+"ffe7d30c-70f2-4ac5-ba21-39f11674f304.png",13275870:MEDIA+"6d50a4c0-43fa-4bd8-9d52-af2e539e81f6.webp",13249484:MEDIA+"94d7bd02-6642-4860-81fe-20537e7a0731.webp",10410407:MEDIA+"94d7bd02-6642-4860-81fe-20537e7a0731.webp",13275872:MEDIA+"b6040595-5b9a-4de2-8676-b835b5fbf79c.jpg",13249480:MEDIA+"c5f881a9-0318-45df-ade1-933aa68aeea3.png",13249481:MEDIA+"c5f881a9-0318-45df-ade1-933aa68aeea3.png",13275874:MEDIA+"93f4a6b9-eaa3-4854-b4fb-05f4ce8d3f54.png",13275871:MEDIA+"eb71391b-8d70-47ec-b769-384fba5e42d3.png",13249446:MEDIA+"d0719a5c-c5bf-40b4-a29d-47fd959e0bcd.png",13323823:MEDIA+"5550bb7b-ccf0-4686-8eb3-ee9ef80db99b.jpg",13275925:MEDIA+"4349a451-6388-4f69-8e82-83b1e70c1f9b.png",13440628:MEDIA+"eb71391b-8d70-47ec-b769-384fba5e42d3.png",
+  10764912:MEDIA+"87b94b49-6bad-4d5f-a69a-53e98ae88cb8.jpg",11568788:IMAGES+"2f0533a046da152a84da9c7944d5a2cd.jpeg"
 };
 
 const cleanTitle=(value:string)=>value.replace(/^_+/,"").trim();
 const fallbackLocalized=(value:string):Localized=>({ru:cleanTitle(value),en:cleanTitle(value),vi:cleanTitle(value)});
-
-const formatPrice=(min:number,max:number,lang:Lang):string=>{
-  if(!min&&!max)return lang==="ru"?"Уточнить в EVO":lang==="vi"?"Liên hệ EVO":"Ask EVO";
-  const money=(value:number)=>`${new Intl.NumberFormat("vi-VN").format(value*1000)} ₫`;
-  if(max>min)return `${money(min)}–${money(max)}`;
-  if(min>0&&max===0)return `${lang==="ru"?"от ":lang==="vi"?"từ ":"from "}${money(min)}`;
-  return money(min||max);
-};
-
-const specialistRole=(position?:string,specialization?:string):Localized=>{
-  const source=position||specialization||"Специалист EVO";
-  const value=`${position||""} ${specialization||""}`.toLowerCase();
-  if(value.includes("врач косметолог"))return {ru:source,en:"Cosmetologist physician",vi:"Bác sĩ thẩm mỹ"};
-  if(value.includes("косметолог"))return {ru:source,en:"Cosmetologist",vi:"Chuyên gia thẩm mỹ"};
-  if(value.includes("подолог"))return {ru:source,en:"Podologist",vi:"Chuyên gia podology"};
-  if(value.includes("барбер"))return {ru:source,en:"Barber",vi:"Barber"};
-  if(value.includes("парикмах")||value.includes("стилист"))return {ru:source,en:"Hair stylist",vi:"Chuyên gia tóc"};
-  if(value.includes("маник")||value.includes("nail"))return {ru:source,en:"Nail specialist",vi:"Chuyên gia móng"};
-  if(value.includes("бров")||value.includes("перманент"))return {ru:source,en:"Brow / PMU specialist",vi:"Chuyên gia chân mày / PMU"};
-  if(value.includes("массаж"))return {ru:source,en:"Massage specialist",vi:"Chuyên gia massage"};
-  if(value.includes("лазерной эпиляции"))return {ru:source,en:"Laser hair removal specialist",vi:"Chuyên gia triệt lông laser"};
-  return {ru:source,en:"EVO specialist",vi:"Chuyên gia EVO"};
-};
+const formatPrice=(min:number,max:number,lang:Lang):string=>{if(!min&&!max)return lang==="ru"?"Уточнить в EVO":lang==="vi"?"Liên hệ EVO":"Ask EVO";const money=(v:number)=>`${new Intl.NumberFormat("vi-VN").format(v*1000)} ₫`;if(max>min)return `${money(min)}–${money(max)}`;if(min>0&&max===0)return `${lang==="ru"?"от ":lang==="vi"?"từ ":"from "}${money(min)}`;return money(min||max);};
+const specialistRole=(position?:string,specialization?:string):Localized=>{const source=position||specialization||"Специалист EVO";const value=`${position||""} ${specialization||""}`.toLowerCase();if(value.includes("врач косметолог"))return {ru:source,en:"Cosmetologist physician",vi:"Bác sĩ thẩm mỹ"};if(value.includes("косметолог"))return {ru:source,en:"Cosmetologist",vi:"Chuyên gia thẩm mỹ"};if(value.includes("подолог"))return {ru:source,en:"Podologist",vi:"Chuyên gia podology"};if(value.includes("барбер"))return {ru:source,en:"Barber",vi:"Barber"};if(value.includes("парикмах")||value.includes("стилист")||value.includes("hairdresser"))return {ru:source,en:"Hair stylist",vi:"Chuyên gia tóc"};if(value.includes("маник")||value.includes("nail"))return {ru:source,en:"Nail specialist",vi:"Chuyên gia móng"};if(value.includes("бров")||value.includes("перманент")||value.includes("ресниц"))return {ru:source,en:"Brow / PMU / lash specialist",vi:"Chuyên gia chân mày / PMU / mi"};if(value.includes("массаж"))return {ru:source,en:"Massage specialist",vi:"Chuyên gia massage"};if(value.includes("лазерной эпиляции"))return {ru:source,en:"Laser hair removal specialist",vi:"Chuyên gia triệt lông laser"};return {ru:source,en:"EVO specialist",vi:"Chuyên gia EVO"};};
 
 export const catalogMeta={...snapshot.meta,snapshotStats:snapshot.stats};
-export const locations:Location[]=[{
-  id:"north",name:snapshot.location.title,address:snapshot.location.address,phone:snapshot.location.phone,
-  email:snapshot.location.email||"evo.beauty.space@gmail.com",altegioCompanyId:snapshot.location.id,
-  bookingUrl:`https://n1324284.alteg.io/company/${OFFICIAL_BOOKING_COMPANY_ID}/personal/menu?o=`,
-  mapUrl:`https://www.google.com/maps/search/?api=1&query=${snapshot.location.lat},${snapshot.location.lon}`,
-  telegramUrl:brandTelegramUrl
-}];
-
-export const categories:Category[]=snapshot.categories.map(raw=>{
-  const groupId=categoryGroup[raw.id]||"cosmetology";
-  const group=groupUi[groupId]||groupUi.cosmetology;
-  return {
-    id:`altegio-${raw.id}`,
-    altegioId:raw.id,
-    groupId,
-    name:categoryNames[raw.id]||fallbackLocalized(raw.title),
-    note:group.note,
-    image:group.image
-  };
-});
-
-export const groups:ServiceGroup[]=Object.entries(groupUi).map(([id,value])=>({
-  id,...value,categoryIds:categories.filter(category=>category.groupId===id).map(category=>category.id)
-})).filter(group=>group.categoryIds.length>0);
-
+export const locations:Location[]=[{id:"north",name:snapshot.location.title,address:snapshot.location.address,phone:snapshot.location.phone,email:snapshot.location.email||"evo.beauty.space@gmail.com",altegioCompanyId:snapshot.location.id,bookingUrl:`https://n1324284.alteg.io/company/${OFFICIAL_BOOKING_COMPANY_ID}/personal/menu?o=`,mapUrl:`https://www.google.com/maps/search/?api=1&query=${snapshot.location.lat},${snapshot.location.lon}`,telegramUrl:brandTelegramUrl}];
+export const categories:Category[]=snapshot.categories.map(raw=>{const groupId=categoryGroup[raw.id]||"cosmetology";const group=groupUi[groupId]||groupUi.cosmetology;return {id:`altegio-${raw.id}`,altegioId:raw.id,groupId,name:categoryNames[raw.id]||fallbackLocalized(raw.title),note:group.note,image:categoryImages[raw.id]||group.image};});
+export const groups:ServiceGroup[]=Object.entries(groupUi).map(([id,value])=>({id,...value,categoryIds:categories.filter(category=>category.groupId===id).map(category=>category.id)})).filter(group=>group.categoryIds.length>0);
 const snapshotSpecialistIds=new Set(snapshot.specialists.map(item=>item.id));
 const fallbackSpecialistId="evo-online-team";
-export const services:Service[]=snapshot.services.map(raw=>{
-  const category=categories.find(item=>item.altegioId===raw.categoryId);
-  const translated=serviceTranslations[raw.id];
-  const official:Localized={ru:cleanTitle(raw.title),en:translated?.en||cleanTitle(raw.title),vi:translated?.vi||cleanTitle(raw.title)};
-  const mapped=raw.specialistIds.filter(id=>snapshotSpecialistIds.has(id)).map(id=>`altegio-staff-${id}`);
-  return {
-    id:`altegio-${raw.id}`,altegioId:raw.id,categoryId:`altegio-${raw.categoryId}`,name:official,
-    description:category?.note||{ru:"Услуга EVO",en:"EVO service",vi:"Dịch vụ EVO"},
-    price:{ru:formatPrice(raw.priceMin,raw.priceMax,"ru"),en:formatPrice(raw.priceMin,raw.priceMax,"en"),vi:formatPrice(raw.priceMin,raw.priceMax,"vi")},
-    duration:raw.durationSeconds?Math.round(raw.durationSeconds/60):null,image:category?.image||groupUi.cosmetology.image,
-    specialistIds:mapped.length?mapped:[fallbackSpecialistId]
-  };
-});
-
-export const specialists:Specialist[]=[...snapshot.specialists.map(raw=>({
-  id:`altegio-staff-${raw.id}`,altegioId:raw.id,name:{ru:raw.name,en:raw.name,vi:raw.name},
-  role:specialistRole(raw.position,raw.specialization),
-  bio:{ru:"Профиль и перечень услуг получены из публичного каталога Altegio EVO NORTH.",en:"Profile and service links are sourced from the public EVO NORTH Altegio catalog.",vi:"Hồ sơ và danh sách dịch vụ được lấy từ danh mục Altegio công khai của EVO NORTH."},
-  image:raw.avatar||brandLogoUrl,serviceIds:raw.serviceIds.map(id=>`altegio-${id}`),demo:false,bookable:raw.bookable
-})),{
-  id:fallbackSpecialistId,name:{ru:"Специалист EVO — выбор при записи",en:"EVO specialist — select when booking",vi:"Chuyên gia EVO — chọn khi đặt lịch"},
-  role:{ru:"Официальная онлайн-запись",en:"Official online booking",vi:"Đặt lịch trực tuyến chính thức"},
-  bio:{ru:"Для части услуг snapshot Altegio не вернул прямую связь со специалистом. Доступный специалист выбирается в официальной форме EVO.",en:"For some services the Altegio snapshot did not return a direct staff mapping. Choose an available specialist in EVO's official booking form.",vi:"Với một số dịch vụ, snapshot Altegio chưa trả về liên kết trực tiếp với chuyên gia. Hãy chọn chuyên gia khả dụng trong biểu mẫu đặt lịch chính thức của EVO."},
-  image:brandLogoUrl,serviceIds:services.filter(service=>service.specialistIds.includes(fallbackSpecialistId)).map(service=>service.id),demo:true,bookable:true
-}];
-
+export const services:Service[]=snapshot.services.map(raw=>{const category=categories.find(item=>item.altegioId===raw.categoryId);const translated=serviceTranslations[raw.id];const official:Localized={ru:cleanTitle(raw.title),en:translated?.en||cleanTitle(raw.title),vi:translated?.vi||cleanTitle(raw.title)};const mapped=raw.specialistIds.filter(id=>snapshotSpecialistIds.has(id)).map(id=>`altegio-staff-${id}`);return {id:`altegio-${raw.id}`,altegioId:raw.id,categoryId:`altegio-${raw.categoryId}`,name:official,description:category?.note||{ru:"Услуга EVO",en:"EVO service",vi:"Dịch vụ EVO"},price:{ru:formatPrice(raw.priceMin,raw.priceMax,"ru"),en:formatPrice(raw.priceMin,raw.priceMax,"en"),vi:formatPrice(raw.priceMin,raw.priceMax,"vi")},duration:raw.durationSeconds?Math.round(raw.durationSeconds/60):null,image:category?.image||groupUi.cosmetology.image,specialistIds:mapped.length?mapped:[fallbackSpecialistId]};});
+export const specialists:Specialist[]=[...snapshot.specialists.map(raw=>({id:`altegio-staff-${raw.id}`,altegioId:raw.id,name:{ru:raw.name,en:raw.name,vi:raw.name},role:specialistRole(raw.position,raw.specialization),bio:{ru:"Профиль и перечень услуг получены из публичного каталога Altegio EVO NORTH.",en:"Profile and service links are sourced from the public EVO NORTH Altegio catalog.",vi:"Hồ sơ và danh sách dịch vụ được lấy từ danh mục Altegio công khai của EVO NORTH."},image:raw.avatar||brandLogoUrl,serviceIds:raw.serviceIds.map(id=>`altegio-${id}`),demo:false,bookable:raw.bookable})),{id:fallbackSpecialistId,name:{ru:"Специалист EVO — выбор при записи",en:"EVO specialist — select when booking",vi:"Chuyên gia EVO — chọn khi đặt lịch"},role:{ru:"Официальная онлайн-запись",en:"Official online booking",vi:"Đặt lịch trực tuyến chính thức"},bio:{ru:"Для части услуг snapshot Altegio не вернул прямую связь со специалистом. Доступный специалист выбирается в официальной форме EVO.",en:"For some services the Altegio snapshot did not return a direct staff mapping. Choose an available specialist in EVO's official booking form.",vi:"Với một số dịch vụ, snapshot Altegio chưa trả về liên kết trực tiếp với chuyên gia. Hãy chọn chuyên gia khả dụng trong biểu mẫu đặt lịch chính thức của EVO."},image:brandLogoUrl,serviceIds:services.filter(service=>service.specialistIds.includes(fallbackSpecialistId)).map(service=>service.id),demo:true,bookable:true}];
 export const getCategory=(id:string)=>categories.find(item=>item.id===id);
 export const getGroup=(id:string)=>groups.find(item=>item.id===id);
 export const getService=(id:string)=>services.find(item=>item.id===id);
